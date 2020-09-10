@@ -4,11 +4,11 @@ API Pencarian Kode Pos Indonesia Berdasarkan Nama Tempat, Desa atau Kota.
 **Development**
 1. Clone this repository
     ```
-    git clone https://github.com/sProDev/carikodepos.git
+    git clone https://github.com/sProDev/kodepos.git
     ```
 2. Change the current working directory to this repository folder
     ```
-    cd carikodepos
+    cd kodepos
     ```
 3. Install all modules listed as dependencies in package.json
     ```
