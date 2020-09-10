@@ -31,5 +31,5 @@ API Pencarian Kode Pos Indonesia Berdasarkan Nama Tempat, Desa atau Kota.
     http://localhost:3000/?q=widuri+pemalang
 
 
-**Ready to use**
-- https://kodepos.now.sh/?q=urban+name
+### Ready to use
+https://kodepos.now.sh/?q=urban+name
