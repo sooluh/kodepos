@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sProDev/carikodepos.git"
+    "url": "git+https://github.com/sProDev/kodepos.git"
   },
   "keywords": [
     "cari kodepos",
@@ -20,9 +20,9 @@
   "author": "sProDev",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/sProDev/carikodepos/issues"
+    "url": "https://github.com/sProDev/kodepos/issues"
   },
-  "homepage": "https://github.com/sProDev/carikodepos#readme",
+  "homepage": "https://github.com/sProDev/kodepos#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cheerio": "^1.0.0-rc.3",
