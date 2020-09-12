@@ -1,0 +1,33 @@
+{
+  "name": "carikodepos",
+  "version": "0.0.1",
+  "description": "Search postcodes by area name",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./index.js",
+    "start": "node ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sProDev/kodepos.git"
+  },
+  "keywords": [
+    "cari kodepos",
+    "kodepos",
+    "postalcode"
+  ],
+  "author": "sProDev",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/sProDev/kodepos/issues"
+  },
+  "homepage": "https://github.com/sProDev/kodepos#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "request": "^2.88.2"
+  }
+}
