@@ -16,6 +16,7 @@ API Pencarian Kode Pos Indonesia Berdasarkan Nama Tempat, Desa atau Kota.
     ```
 4. Run the server
     - Development mode
+        
         Install nodemon globally
         ```
         npm i nodemon -g
