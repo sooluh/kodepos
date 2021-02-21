@@ -109,4 +109,4 @@ curl -XGET 'http://localhost:3000/search?q=danasari'
 
 ### License
 
-Code licensed under [MIT License](https://github.com/sProDev/kodepos/blob/main/LICENSE).
+Code licensed under [Apache 2.0 License](https://github.com/sProDev/kodepos/blob/main/LICENSE).
