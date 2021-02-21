@@ -39,7 +39,7 @@ Base URL : `http://localhost:3000/`
 
 | Endpoint  | Description                                 | Parameter | Method |
 | --------- | ------------------------------------------- | --------- | ------ |
-| `/`       | Only the start page shows basic information | Tidak Ada | GET    |
+| `/`       | Only the start page shows basic information | No        | GET    |
 | `/search` | To find postcode using keywords             | `q`       | GET    |
 
 ### Example
