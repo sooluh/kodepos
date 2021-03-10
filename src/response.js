@@ -6,7 +6,7 @@ const approve = (values, response) => {
         data: values
     }
 
-    response.set('X-Powered-By', 'sProDev')
+    response.set('X-Powered-By', 'sooluh')
     response.json(data)
     response.end()
 
@@ -20,7 +20,7 @@ const disapprove = (values, response) => {
         data: values
     }
 
-    response.set('X-Powered-By', 'sProDev')
+    response.set('X-Powered-By', 'sooluh')
     response.json(data)
     response.end()
 

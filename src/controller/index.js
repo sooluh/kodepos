@@ -7,12 +7,12 @@ const home = async (request, response) => {
     let data = {
         information: {
             messsage: 'Restful API ini digunakan untuk mencari Kode Pos Indonesia berdasarkan nama tempat, desa atau kota. Untuk informasi lebih lanjut, silahkan klik tautan dokumentasi berikut.',
-            documentation: 'https://github.com/sProDev/kodepos#readme'
+            documentation: 'https://github.com/sooluh/kodepos#readme'
         },
         authors: {
             name: 'Suluh Sulistiawan',
             website: 'https://suluh.my.id/',
-            github: 'https://github.com/sProDev'
+            github: 'https://github.com/sooluh'
         }
     }
 
