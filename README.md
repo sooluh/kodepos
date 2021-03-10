@@ -6,7 +6,7 @@ API Pencarian Kode Pos Indonesia Berdasarkan Nama Tempat, Desa atau Kota.
 
 1. Clone this repository
     ```
-    git clone https://github.com/sProDev/kodepos.git
+    git clone https://github.com/sooluh/kodepos.git
     ```
 
 2. Change the current working directory to this repository folder
@@ -98,15 +98,15 @@ curl -XGET 'http://localhost:3000/search?q=danasari'
 
 ### Global
 
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/sProDev)
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/sooluh)
 
 ### Indonesia
 
-- [Trakteer](https://trakteer.id/sproDev)
-- [Saweria](https://saweria.co/sProDev)
+- [Trakteer](https://trakteer.id/sooluh)
+- [Saweria](https://saweria.co/sooluh)
 
 ## Additional Information
 
 ### License
 
-Code licensed under [Apache 2.0 License](https://github.com/sProDev/kodepos/blob/main/LICENSE).
+Code licensed under [Apache 2.0 License](https://github.com/sooluh/kodepos/blob/main/LICENSE).

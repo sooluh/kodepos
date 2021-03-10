@@ -9,7 +9,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/sProDev/kodepos.git"
+        "url": "git+https://github.com/sooluh/kodepos.git"
     },
     "keywords": [
         "carikodepos",
@@ -20,12 +20,12 @@
         "postal",
         "code"
     ],
-    "author": "sProDev",
+    "author": "sooluh",
     "license": "Apache-2.0",
     "bugs": {
-        "url": "https://github.com/sProDev/kodepos/issues"
+        "url": "https://github.com/sooluh/kodepos/issues"
     },
-    "homepage": "https://github.com/sProDev/kodepos#readme",
+    "homepage": "https://github.com/sooluh/kodepos#readme",
     "dependencies": {
         "axios": "^0.21.1",
         "body-parser": "^1.19.0",
