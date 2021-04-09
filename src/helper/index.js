@@ -1,20 +1,4 @@
-const empty = (str) => {
-
-    if (str === undefined) {
-        return true
-    }
-
-    if (str === null) {
-        return true
-    }
-
-    if (str === '') {
-        return true
-    }
-
-    return false
-
-}
+const empty = (str) => (str === undefined || str === null || (str || "").trim() === "")
 
 module.exports = {
     empty
