@@ -1,4 +1,4 @@
-const { Kodepos } = require("./kodepos.js");
+const { Kodepos } = require(__dirname + "/kodepos.js");
 
 /**
  * Controller class

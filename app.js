@@ -1,10 +1,10 @@
-const { Routes } = require("./src/routes.js");
+const { Routes } = require(__dirname + "/src/routes.js");
 
 const compress = require("fastify-compress");
 const Fastify = require("fastify");
 const middie = require("middie");
-const cors = require("cors");
 const { parse } = require("qs");
+const cors = require("cors");
 
 /**
  * App class
@@ -74,4 +74,5 @@ class App extends Routes {
 /**
  * Call App class and start function
  */
-new App().start();
+const app = new App();
+app.start();

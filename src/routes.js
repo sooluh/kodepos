@@ -1,4 +1,4 @@
-const { Controller } = require("./controller.js");
+const { Controller } = require(__dirname + "/controller.js");
 
 /**
  * Routes class
