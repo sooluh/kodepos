@@ -2,7 +2,6 @@
   "name": "kodepos",
   "version": "2.0.0",
   "description": "Indonesian postal code search API by place name, village or city.",
-  "main": "app.js",
   "scripts": {
     "dev": "nodemon ./app.js",
     "start": "node ./app.js"
