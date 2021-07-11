@@ -1,10 +1,10 @@
-import Routes from "./src/routes.js";
+const { Routes } = require("./src/routes.js");
 
-import compress from "fastify-compress";
-import Fastify from "fastify";
-import middie from "middie";
-import cors from "cors";
-import { parse } from "qs";
+const compress = require("fastify-compress");
+const Fastify = require("fastify");
+const middie = require("middie");
+const cors = require("cors");
+const { parse } = require("qs");
 
 /**
  * App class

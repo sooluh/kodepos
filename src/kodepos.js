@@ -1,6 +1,6 @@
-import HeaderGenerator from "header-generator";
-import axios from "axios";
-import { load } from "cheerio";
+const HeaderGenerator = require("header-generator");
+const axios = require("axios").default;
+const { load } = require("cheerio");
 
 /**
  * Kodepos class
@@ -99,4 +99,4 @@ class Kodepos {
 	}
 }
 
-export default Kodepos;
+module.exports = { Kodepos };
