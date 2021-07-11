@@ -1,6 +1,6 @@
 # Postal Code API (Indonesia)
 
-API Pencarian Kode Pos Indonesia Berdasarkan Nama Tempat, Desa atau Kota.
+Indonesian postal code search API by place name, village or city.
 
 ## Development
 
@@ -13,7 +13,7 @@ API Pencarian Kode Pos Indonesia Berdasarkan Nama Tempat, Desa atau Kota.
     ```
     cd kodepos
     ```
-
+    
 3. Install all modules listed as dependencies in package.json
     ```
     npm i --save
@@ -47,7 +47,7 @@ Base URL : `http://localhost:3000/`
 #### Request
 
 ```curl
-curl -XGET 'http://localhost:3000/search?q=danasari'
+curl -XGET 'http://localhost:3000/search/?q=danasari'
 ```
 
 #### Response
@@ -55,7 +55,7 @@ curl -XGET 'http://localhost:3000/search?q=danasari'
 ```json
 {
     "success": true,
-    "message": "success",
+    "message": "Data search successfully parsed.",
     "data": [
         {
             "province": "Jawa Tengah",
@@ -93,17 +93,6 @@ curl -XGET 'http://localhost:3000/search?q=danasari'
 
 - https://kodepos.now.sh/
 - https://kodepos.herokuapp.com/
-
-## Support Me
-
-### Global
-
-[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/sooluh)
-
-### Indonesia
-
-- [Trakteer](https://trakteer.id/sooluh)
-- [Saweria](https://saweria.co/sooluh)
 
 ## Additional Information
 

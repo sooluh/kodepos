@@ -1,39 +1,47 @@
 {
-    "name": "carikodepos",
-    "version": "1.0.0",
-    "description": "Search postcodes by area name",
-    "main": "src/server.js",
-    "scripts": {
-        "dev": "nodemon ./src/server.js",
-        "start": "node ./src/server.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/sooluh/kodepos.git"
-    },
-    "keywords": [
-        "carikodepos",
-        "cari",
-        "kodepos",
-        "postalcode",
-        "post",
-        "postal",
-        "code"
-    ],
-    "author": "sooluh",
-    "license": "Apache-2.0",
-    "bugs": {
-        "url": "https://github.com/sooluh/kodepos/issues"
-    },
-    "homepage": "https://github.com/sooluh/kodepos#readme",
-    "dependencies": {
-        "axios": "^0.21.1",
-        "body-parser": "^1.19.0",
-        "cheerio": "^1.0.0-rc.10",
-        "cors": "^2.8.5",
-        "express": "^4.17.1"
-    },
-    "devDependencies": {
-        "nodemon": "^2.0.11"
-    }
+  "name": "kodepos",
+  "version": "2.0.0",
+  "description": "Indonesian postal code search API by place name, village or city.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon ./app.js",
+    "start": "node ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sooluh/kodepos.git"
+  },
+  "keywords": [
+    "carikodepos",
+    "cari",
+    "kodepos",
+    "postalcode",
+    "post",
+    "postal",
+    "code",
+    "kode-pos"
+  ],
+  "author": {
+    "name": "Suluh Sulistiawan",
+    "url": "https://suluh.my.id",
+    "email": "suluh.webdevelopers@hotmail.com"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/sooluh/kodepos/issues"
+  },
+  "homepage": "https://kodepos.now.sh",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.10",
+    "cors": "^2.8.5",
+    "fastify": "^3.19.0",
+    "fastify-compress": "^3.6.0",
+    "header-generator": "^1.0.0",
+    "middie": "^5.3.0",
+    "qs": "^6.10.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
 }
