@@ -1,6 +1,6 @@
-const HeaderGenerator = require("header-generator");
-const axios = require("axios").default;
-const cheerio = require("cheerio");
+import HeaderGenerator from "header-generator";
+import axios from "axios";
+import { load } from "cheerio";
 
 /**
  * Kodepos class
@@ -50,7 +50,7 @@ class Kodepos {
 				url,
 				headers: this.#headers
 			});
-			const $ = cheerio.load(output.data);
+			const $ = load(output.data);
 
 			let tr = $("tr");
 			if (tr.length > 0) {
@@ -99,4 +99,4 @@ class Kodepos {
 	}
 }
 
-module.exports = { Kodepos };
+export default Kodepos;

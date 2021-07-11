@@ -1,4 +1,4 @@
-const { Controller } = require("./controller");
+import Controller from "./controller.js";
 
 /**
  * Routes class
@@ -66,4 +66,4 @@ class Routes extends Controller {
 	}
 }
 
-module.exports = { Routes };
+export default Routes;

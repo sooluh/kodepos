@@ -1,10 +1,10 @@
-const { Routes } = require("./src/routes");
+import Routes from "./src/routes.js";
 
-const compress = require("fastify-compress");
-const Fastify = require("fastify");
-const middie = require("middie");
-const cors = require("cors");
-const qs = require("qs");
+import compress from "fastify-compress";
+import Fastify from "fastify";
+import middie from "middie";
+import cors from "cors";
+import { parse } from "qs";
 
 /**
  * App class
@@ -30,7 +30,7 @@ class App extends Routes {
 		this.app = new Fastify({
 			ignoreTrailingSlash: true,
 			caseSensitive: false,
-			querystringParser: q => qs.parse(q)
+			querystringParser: q => parse(q)
 		});
 	}
 

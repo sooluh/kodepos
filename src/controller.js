@@ -1,4 +1,4 @@
-const { Kodepos } = require("./kodepos");
+import Kodepos from "./kodepos.js";
 
 /**
  * Controller class
@@ -64,4 +64,4 @@ class Controller {
 	}
 }
 
-module.exports = { Controller };
+export default Controller;
