@@ -92,7 +92,6 @@ curl -XGET 'http://localhost:3000/search/?q=danasari'
 ### Ready to use
 
 - https://kodepos.now.sh/
-- https://kodepos.herokuapp.com/
 
 ## Additional Information
 

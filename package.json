@@ -4,8 +4,11 @@
   "description": "Indonesian postal code search API by place name, village or city.",
   "main": "app.ts",
   "scripts": {
-    "dev": "nodemon --ext \"ts,json\" --exec \"ts-node app.ts\"",
-    "start": "ts-node app.ts"
+    "build": "tsc",
+    "postinstall": "npm run build",
+    "start": "node build/app.js",
+    "start:dev": "PORT=3000 node build/app.js",
+    "dev": "PORT=3000 nodemon --exec ts-node app.ts"
   },
   "keywords": [
     "carikodepos",
@@ -43,6 +46,7 @@
     "@types/node": "^16.3.1",
     "@types/qs": "^6.9.7",
     "nodemon": "^2.0.12",
+    "ts": "^0.2.2",
     "ts-node": "^10.1.0",
     "typescript": "^4.3.5"
   }
