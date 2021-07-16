@@ -1,5 +1,7 @@
 import { DataResponse } from "../types/api";
+import { DataResult, DataResults } from "../types/kodepos";
 
+// @ts-ignore: Unreachable code error
 import HeaderGenerator from "header-generator";
 import cheerio from "cheerio";
 import axios from "axios";
@@ -32,16 +34,16 @@ class Kodepos {
 
 			let tr: cheerio.Cheerio = $("tr");
 			if (tr.length > 0) {
-				let results: Array<object> = [];
+				let results: DataResults = [];
 
 				tr.each((number: number, element: cheerio.Element): void => {
 					if (number === 0) return;
 
 					let td: cheerio.Cheerio = $(element).find("td");
-					let result: object = {};
+					let result: DataResult = {};
 
 					td.each((index: number, html: cheerio.Element): void => {
-						let value: string = $(html).find("a").html();
+						let value: string | any = $(html).find("a").html();
 						let key: string = index === 0 ? "province" :
 							(index === 1 ? "city" :
 								(index === 2 ? "subdistrict" :

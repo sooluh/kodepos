@@ -9,14 +9,14 @@ Indonesian postal code search API by place name, village or city.
     git clone https://github.com/sooluh/kodepos.git
     ```
 
-2. Change the current working directory to this repository folder
+2. Change current directory to this repository folder
     ```
     cd kodepos
     ```
     
-3. Install all modules listed as dependencies in package.json
+3. Install dependencies
     ```
-    npm i --save
+    npm install
     ```
     
 4. Run the server
@@ -27,9 +27,15 @@ Indonesian postal code search API by place name, village or city.
         ```
     
     - Production mode
-        ```
-        npm run start
-        ```
+        1. Build first
+           ```
+           npm run build
+           ```
+           
+        2. Run
+           ```
+           npm start
+           ```
 
 ## Usage
 
@@ -92,6 +98,7 @@ curl -XGET 'http://localhost:3000/search/?q=danasari'
 ### Ready to use
 
 - https://kodepos.now.sh/
+- https://kodepos.herokuapp.com/
 
 ## Additional Information
 

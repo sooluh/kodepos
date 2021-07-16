@@ -1,15 +1,18 @@
 {
   "compilerOptions": {
-    "outDir": "build",
-    "skipLibCheck": true,
-    "strict": false,
-    "esModuleInterop": true,
-    "lib": [
-      "esnext"
-    ],
-    "target": "ES2018",
+    "baseUrl": "./",
     "module": "commonjs",
-    "sourceMap": false,
-    "declaration": true
-  }
+    "outDir": "./dist",
+    "strict": true,
+    "target": "ES2019",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "removeComments": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "./app.ts",
+    "src/**/*",
+    "types/**/*"
+  ]
 }
