@@ -1,0 +1,57 @@
+{
+  "name": "kodepos",
+  "version": "2.1.0",
+  "description": "Indonesian postal code search API by place name, village or city.",
+  "main": "build/app.js",
+  "engines": {
+    "node": "14.x"
+  },
+  "scripts": {
+    "start": "node build/app.js",
+    "build": "tsc",
+    "dev": "nodemon"
+  },
+  "keywords": [
+    "carikodepos",
+    "cari",
+    "kodepos",
+    "postalcode",
+    "post",
+    "postal",
+    "code",
+    "kode-pos"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sooluh/kodepos.git"
+  },
+  "author": {
+    "name": "Suluh Sulistiawan",
+    "email": "suluh.webdevelopers@hotmail.com",
+    "url": "https://suluh.my.id"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/sooluh/kodepos/issues"
+  },
+  "homepage": "https://kodepos.now.sh",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.10",
+    "cors": "^2.8.5",
+    "fastify": "^3.19.0",
+    "fastify-compress": "^3.6.0",
+    "header-generator": "^1.0.0",
+    "middie": "^5.3.0",
+    "qs": "^6.10.1"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.30",
+    "@types/cors": "^2.8.12",
+    "@types/node": "^16.3.1",
+    "@types/qs": "^6.9.7",
+    "nodemon": "^2.0.12",
+    "tsc": "^2.0.3",
+    "typescript": "^4.3.5"
+  }
+}
