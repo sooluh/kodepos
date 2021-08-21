@@ -13,7 +13,7 @@ class App extends routes_1.default {
     constructor() {
         super();
         this.port = 3000;
-        this.port = parseInt(process.env.PORT || "") || this.port;
+        this.port = process.env.PORT || this.port;
         this.server = fastify_1.default({
             ignoreTrailingSlash: true,
             caseSensitive: false,
