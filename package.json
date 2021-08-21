@@ -8,7 +8,6 @@
   },
   "scripts": {
     "start": "node build/app.js",
-    "build": "tsc",
     "dev": "nodemon"
   },
   "keywords": [
