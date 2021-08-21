@@ -1,4 +1,4 @@
-import { DataResponse } from "../types/api";
+import { DataResponse } from "./interfaces/api";
 import Controller from "./controller";
 
 class Routes extends Controller {

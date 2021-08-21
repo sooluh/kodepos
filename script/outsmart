@@ -1,0 +1,35 @@
+#!/usr/bin/env php
+
+<?php
+
+define("ROOTPATH", dirname(__FILE__) . "/../");
+
+/**
+ * Change .gitignore
+ */
+$gitignore = ROOTPATH . ".gitignore";
+$gitignoreContents = @file_get_contents($gitignore);
+$gitignoreContents = str_replace("build", "src", $gitignoreContents);
+@file_put_contents($gitignore, $gitignoreContents);
+
+/**
+ * Change vercel.json
+ */
+$vercel = ROOTPATH . "vercel.json";
+$vercelContents = @file_get_contents($vercel);
+$vercelContents = str_replace("src/app.ts", "build/app.js", $vercelContents);
+@file_put_contents($vercel, $vercelContents);
+
+/**
+ * Unlink tsconfig.json
+ * and nodemon.json
+ */
+@unlink(ROOTPATH . "tsconfig.json");
+@unlink(ROOTPATH . "nodemon.json");
+
+/**
+ * Remove GitHub Workflows
+ * and script folder
+ */
+@exec("rm -rf ./.github/workflows/");
+@exec("rm -rf ./script/");

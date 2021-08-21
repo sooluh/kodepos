@@ -1,4 +1,4 @@
-import Routes from "./src/routes";
+import Routes from "./routes";
 
 import compress from "fastify-compress";
 import Fastify from "fastify";

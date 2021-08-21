@@ -1,13 +1,13 @@
 {
   "name": "kodepos",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Indonesian postal code search API by place name, village or city.",
-  "main": "dist/app.js",
+  "main": "build/app.js",
   "engines": {
     "node": "14.x"
   },
   "scripts": {
-    "start": "node .",
+    "start": "node build/app.js",
     "build": "tsc",
     "dev": "nodemon"
   },
@@ -21,6 +21,10 @@
     "code",
     "kode-pos"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sooluh/kodepos.git"
+  },
   "author": {
     "name": "Suluh Sulistiawan",
     "email": "suluh.webdevelopers@hotmail.com",
@@ -49,9 +53,5 @@
     "nodemon": "^2.0.12",
     "tsc": "^2.0.3",
     "typescript": "^4.3.5"
-  },
-  "nodemonConfig": {
-    "ext": "ts,json",
-    "exec": "npm run build && npm run start"
   }
 }

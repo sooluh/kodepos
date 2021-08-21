@@ -1,7 +1,6 @@
-import { DataResponse } from "../types/api";
-import { DataResult, DataResults } from "../types/kodepos";
+import { DataResponse } from "./interfaces/api";
+import { DataResult, DataResults } from "./interfaces/kodepos";
 
-// @ts-ignore: Unreachable code error
 import HeaderGenerator from "header-generator";
 import cheerio from "cheerio";
 import axios from "axios";

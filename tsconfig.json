@@ -2,17 +2,21 @@
   "compilerOptions": {
     "baseUrl": "./",
     "module": "commonjs",
-    "outDir": "./dist",
+    "outDir": "./build",
     "strict": true,
     "target": "ES2019",
+    "resolveJsonModule": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "removeComments": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "noImplicitAny": false
   },
   "include": [
-    "./app.ts",
-    "src/**/*",
-    "types/**/*"
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
   ]
 }
