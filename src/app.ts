@@ -7,13 +7,13 @@ import { parse } from "qs";
 import cors from "cors";
 
 class App extends Routes {
-	private port: number = 3000;
+	private port: number | string = 3000;
 	private server: any;
 
 	constructor() {
 		super();
 
-		this.port = parseInt(process.env.PORT || "") || this.port;
+		this.port = process.env.PORT || this.port;
 		this.server = Fastify({
 			ignoreTrailingSlash: true,
 			caseSensitive: false,
