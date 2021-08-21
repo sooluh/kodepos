@@ -21,6 +21,14 @@ $vercelContents = str_replace("src/app.ts", "build/app.js", $vercelContents);
 @file_put_contents($vercel, $vercelContents);
 
 /**
+ * Change package.json
+ */
+$package = ROOTPATH . "package.json";
+$packageContents = @file_get_contents($package);
+$packageContents = preg_replace("/\n(\s+)\"build\": \"([a-z]+)\",/", "", $packageContents);
+@file_put_contents($package, $packageContents);
+
+/**
  * Unlink tsconfig.json
  * and nodemon.json
  */
