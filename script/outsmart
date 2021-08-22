@@ -29,11 +29,12 @@ $packageContents = preg_replace("/\n(\s+)\"build\": \"([a-z]+)\",/", "", $packag
 @file_put_contents($package, $packageContents);
 
 /**
- * Unlink tsconfig.json
- * and nodemon.json
+ * Unlink tsconfig.json, nodemon.json
+ * and README.md
  */
 @unlink(ROOTPATH . "tsconfig.json");
 @unlink(ROOTPATH . "nodemon.json");
+@unlink(ROOTPATH . "README.md");
 
 /**
  * Remove GitHub Workflows
