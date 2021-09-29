@@ -1,7 +1,11 @@
 tasks:
-  - init: npm install # runs during prebuild
+  - init: npm install
     command: npm run dev
 
 ports:
   - port: 3000
-    onOpen: open-browser
+    onOpen: ignore
+
+vscode:
+  extensions:
+    - rangav.vscode-thunder-client
