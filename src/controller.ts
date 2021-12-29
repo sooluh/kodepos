@@ -1,48 +1,30 @@
-import { DataResponse } from "./interfaces/api";
-import Kodepos from "./kodepos";
+import { FastifyReply, FastifyRequest } from 'fastify'
+import { DataResponse } from './interfaces/api'
+import Kodepos from './kodepos'
 
 class Controller {
-	protected async home(request: any, reply: any): Promise<void> {
-		let response: DataResponse = {
-			code: 200,
-			status: true,
-			messages: "This Restful API is used to search for Indonesian postal codes based on the name of a place, village or city.",
-			data: {
-				documentation: "https://github.com/sooluh/kodepos#readme",
-				author: {
-					name: "Suluh Sulistiawan",
-					email: "suluh.webdevelopers@hotmail.com",
-					url: "https://suluh.my.id/",
-					social: {
-						twitter: "https://www.twitter.com/suluh_s",
-						linkedin: "https://www.linkedin.com/in/suluhs",
-						github: "https://github.com/sooluh"
-					}
-				}
-			}
-		};
-
-		reply.status(response.code).send(response);
+	public async home(_request: FastifyRequest, reply: FastifyReply): Promise<void> {
+		reply.redirect('https://github.com/sooluh/kodepos')
 	}
 
-	protected async search(request: any, reply: any): Promise<any> {
-		let { q } = request.query;
+	public async search(request: FastifyRequest, reply: FastifyReply): Promise<any> {
+		let { q } = request.query as any
 
-		if (q === undefined || q.trim() === "") {
+		if (typeof q === 'undefined' || q.trim() === '') {
 			let response: DataResponse = {
 				code: 400,
 				status: false,
-				messages: "Cannot perform search without parameter \"q\"!"
-			};
+				messages: 'Cannot perform search without parameter "q"!'
+			}
 
-			reply.status(response.code).send(response);
+			reply.status(response.code).send(response)
 		} else {
-			let postal = new Kodepos(q);
-			let result = await postal.search();
+			let postal = new Kodepos(q)
+			let response = await postal.search()
 
-			reply.status(200).send(result);
+			reply.status(response.code).send(response)
 		}
 	}
 }
 
-export default Controller;
+export default Controller

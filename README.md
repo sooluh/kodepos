@@ -43,10 +43,9 @@ Base URL : `http://localhost:3000/`
 
 ### Endpoint
 
-| Endpoint  | Description                                 | Parameter | Method |
-| --------- | ------------------------------------------- | --------- | ------ |
-| `/`       | Only the start page shows basic information | No        | GET    |
-| `/search` | To find postcode using keywords             | `q`       | GET    |
+| Endpoint  | Description                     | Parameter | Method |
+| --------- | ------------------------------- | --------- | ------ |
+| `/search` | To find postcode using keywords | `q`       | GET    |
 
 ### Example
 

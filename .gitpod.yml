@@ -5,7 +5,3 @@ tasks:
 ports:
   - port: 3000
     onOpen: ignore
-
-vscode:
-  extensions:
-    - rangav.vscode-thunder-client

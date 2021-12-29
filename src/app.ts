@@ -1,51 +1,55 @@
-import Routes from "./routes";
+import Fastify, { FastifyInstance } from 'fastify'
+import fastifyCors from 'fastify-cors'
+import fastifyCompress from 'fastify-compress'
+import fastifyPrettier from 'fastify-prettier'
+import { parse } from 'qs'
 
-import compress from "fastify-compress";
-import Fastify from "fastify";
-import middie from "middie";
-import { parse } from "qs";
-import cors from "cors";
+import Routes from './routes'
 
 class App extends Routes {
-	private port: number | string = 3000;
-	private server: any;
+	private readonly port: number = 3000
+	private readonly server: FastifyInstance
 
 	constructor() {
-		super();
+		super()
 
-		this.port = process.env.PORT || this.port;
+		if (typeof process.env.PORT !== 'undefined') {
+			this.port = parseInt(process.env.PORT)
+		}
+
 		this.server = Fastify({
 			ignoreTrailingSlash: true,
 			caseSensitive: false,
-			querystringParser: q => parse(q)
-		});
+			querystringParser: q => parse(q),
+			logger: process.env.NODE_ENV === 'development'
+		})
 	}
 
 	private async middleware(): Promise<void> {
-		// express compatibility layer
-		this.server.use(cors());
-
-		// fastify register
-		await this.server.register(compress);
+		await this.server.register(fastifyCors)
+		await this.server.register(fastifyCompress)
+		await this.server.register(fastifyPrettier, {
+			alwaysOn: true
+		})
 	}
 
 	public async start(): Promise<void> {
 		try {
-			await this.server.register(middie);
-			await this.middleware();
+			await this.middleware()
 
-			this.server.setNotFoundHandler(this.override);
-			this.server.setErrorHandler(this.error);
+			this.server.setNotFoundHandler(this.override)
+			this.server.setErrorHandler(this.error)
 
-			this.routes(this.server);
+			this.routes(this.server)
 
-			let address = await this.server.listen(this.port);
-			console.info("Listen to requests on " + address);
+			let address = await this.server.listen(this.port)
+			console.info('Listen to requests on', address)
 		} catch (error) {
-			this.server.log.error(error);
-			process.exit(1);
+			this.server.log.error(error)
+			process.exit(1)
 		}
 	}
 }
 
-new App().start();
+const app = new App()
+app.start()

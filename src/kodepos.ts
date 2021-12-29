@@ -1,86 +1,87 @@
-import { DataResponse } from "./interfaces/api";
-import { DataResult, DataResults } from "./interfaces/kodepos";
+import HeaderGenerator from 'header-generator'
+import cheerio from 'cheerio'
+import axios from 'axios'
 
-import HeaderGenerator from "header-generator";
-import cheerio from "cheerio";
-import axios from "axios";
+import { DataResponse } from './interfaces/api'
+import { DataResult, DataResults } from './interfaces/kodepos'
 
 class Kodepos {
-	private baseurl: string = "https://carikodepos.com/";
-	private keywords: string;
-	private headers: object;
+	private baseurl: string = 'https://carikodepos.com/'
+	private keywords: string
+	private headers: object
 
 	constructor(keywords: string) {
-		this.keywords = keywords;
+		this.keywords = keywords
+
 		this.headers = new HeaderGenerator({
-			browsers: ["chrome", "firefox", "safari"],
-			operatingSystems: ["linux", "android", "windows"],
-			devices: ["desktop", "mobile"],
-			locales: ["id-ID"]
-		});
+			browsers: ['chrome', 'firefox', 'safari'],
+			operatingSystems: ['linux', 'android', 'windows'],
+			devices: ['desktop', 'mobile'],
+			locales: ['id-ID']
+		})
 	}
 
 	public async search(): Promise<any> {
-		const url = this.baseurl + "?s=" + this.keywords;
+		const url = this.baseurl + '?s=' + this.keywords
 
 		try {
 			let output = await axios({
-				method: "GET",
+				method: 'GET',
 				url,
 				headers: this.headers
-			});
-			const $: cheerio.Root = cheerio.load(output.data);
+			})
+			const $: cheerio.Root = cheerio.load(output.data)
 
-			let tr: cheerio.Cheerio = $("tr");
+			let tr: cheerio.Cheerio = $('tr')
 			if (tr.length > 0) {
-				let results: DataResults = [];
+				let results: DataResults = []
 
 				tr.each((number: number, element: cheerio.Element): void => {
-					if (number === 0) return;
+					if (number === 0) return
 
-					let td: cheerio.Cheerio = $(element).find("td");
-					let result: DataResult = {};
+					let td: cheerio.Cheerio = $(element).find('td')
+					let result: DataResult = {}
 
 					td.each((index: number, html: cheerio.Element): void => {
-						let value: string | any = $(html).find("a").html();
-						let key: string = index === 0 ? "province" :
-							(index === 1 ? "city" :
-								(index === 2 ? "subdistrict" :
-									(index === 3 ? "urban" : "postalcode")));
+						let value: string | any = $(html).find('a').html()
+						let key: string = index === 0 ? 'province' :
+							(index === 1 ? 'city' :
+								(index === 2 ? 'subdistrict' :
+									(index === 3 ? 'urban' : 'postalcode')))
 
-						result[key] = value;
-					});
+						result[key] = value
+					})
 
-					results.push(result);
-				});
+					results.push(result)
+				})
 
 				let response: DataResponse = {
 					code: 200,
 					status: true,
-					messages: "Data search successfully parsed.",
+					messages: 'Data search successfully parsed.',
 					data: results
-				};
+				}
 
-				return response;
+				return response
 			} else {
 				let response: DataResponse = {
 					code: 200,
 					status: false,
-					messages: "No data can be returned."
-				};
+					messages: 'No data can be returned.'
+				}
 
-				return response;
+				return response
 			}
 		} catch (error) {
 			let response: DataResponse = {
 				code: 500,
 				status: false,
-				messages: "An error occurred in the script."
-			};
+				messages: 'An error occurred in the script.'
+			}
 
-			return response;
+			return response
 		}
 	}
 }
 
-export default Kodepos;
+export default Kodepos
