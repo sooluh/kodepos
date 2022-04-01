@@ -51,7 +51,9 @@ class Kodepos {
 						result[key] = value.trim()
 					})
 
-					results.push(result)
+					if (Object.entries(result).length === 5) {
+						results.push(result)
+					}
 				})
 
 				let response: DataResponse = {
