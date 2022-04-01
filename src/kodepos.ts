@@ -5,7 +5,7 @@ import axios from 'axios'
 import { DataResponse, DataResult, DataResults } from './types'
 
 class Kodepos {
-	private readonly baseurl: string = 'https://carikodepos.com/'
+	private readonly baseurl: string = 'https://nomorkodepos.com/'
 	private readonly keywords: string
 	private readonly headers: object
 
@@ -42,13 +42,13 @@ class Kodepos {
 					let result: DataResult = {}
 
 					td.each((index: number, html: cheerio.Element): void => {
-						let value: string | any = $(html).find('a').html()
+						let value: string | any = $(html).find('a').text()
 						let key: string = index === 0 ? 'province' :
 							(index === 1 ? 'city' :
 								(index === 2 ? 'subdistrict' :
 									(index === 3 ? 'urban' : 'postalcode')))
 
-						result[key] = value
+						result[key] = value.trim()
 					})
 
 					results.push(result)
