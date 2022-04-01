@@ -5,7 +5,7 @@ import axios from 'axios'
 import { DataResponse, DataResult, DataResults } from './types'
 
 class Kodepos {
-	private readonly baseurl: string = 'https://nomorkodepos.com/'
+	private readonly baseurl: string = 'https://kodeposindo.com/'
 	private readonly keywords: string
 	private readonly headers: object
 
@@ -72,6 +72,8 @@ class Kodepos {
 				return response
 			}
 		} catch (error) {
+			console.error(error)
+
 			let response: DataResponse = {
 				code: 500,
 				status: false,
