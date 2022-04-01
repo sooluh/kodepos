@@ -1,5 +1,5 @@
 import { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify'
-import { DataResponse } from './interfaces/api'
+import { DataResponse } from './types'
 import Controller from './controller'
 
 class Routes extends Controller {

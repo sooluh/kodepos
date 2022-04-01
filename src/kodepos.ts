@@ -1,14 +1,13 @@
+// @ts-ignore
 import HeaderGenerator from 'header-generator'
 import cheerio from 'cheerio'
 import axios from 'axios'
-
-import { DataResponse } from './interfaces/api'
-import { DataResult, DataResults } from './interfaces/kodepos'
+import { DataResponse, DataResult, DataResults } from './types'
 
 class Kodepos {
-	private baseurl: string = 'https://carikodepos.com/'
-	private keywords: string
-	private headers: object
+	private readonly baseurl: string = 'https://carikodepos.com/'
+	private readonly keywords: string
+	private readonly headers: object
 
 	constructor(keywords: string) {
 		this.keywords = keywords

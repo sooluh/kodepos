@@ -1,41 +1,46 @@
-# Postal Code API (Indonesia)
-
-Indonesian postal code search API by place name, village or city.
+![kodepos](https://socialify.git.ci/sooluh/kodepos/image?description=1&descriptionEditable=Indonesian%20postal%20code%20search%20API%20by%20place%20name%2C%20village%20or%20city.&font=Raleway&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2Ftwitter%2Ftwemoji%2Fmaster%2Fassets%2Fsvg%2F1f4ee.svg&name=1&owner=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Dark)
 
 ## Development
 
 1. Clone this repository
-    ```
-    git clone https://github.com/sooluh/kodepos.git
-    ```
+
+   ```
+   git clone https://github.com/sooluh/kodepos.git
+   ```
 
 2. Change current directory to this repository folder
-    ```
-    cd kodepos
-    ```
-    
+
+   ```
+   cd kodepos
+   ```
+
 3. Install dependencies
-    ```
-    npm install
-    ```
-    
+
+   ```
+   yarn install
+   ```
+
 4. Run the server
-    
-    - Development mode
+
+   - Development mode
+
+     ```
+     yarn dev
+     ```
+
+   - Production mode
+
+     1. Build first
+
         ```
-        npm run dev
+        yarn build
         ```
-    
-    - Production mode
-        1. Build first
-           ```
-           npm run build
-           ```
-           
-        2. Run
-           ```
-           npm start
-           ```
+
+     2. Run
+
+        ```
+        yarn start
+        ```
 
 ## Usage
 
@@ -59,38 +64,38 @@ curl -XGET 'http://localhost:3000/search/?q=danasari'
 
 ```json
 {
-    "success": true,
-    "message": "Data search successfully parsed.",
-    "data": [
-        {
-            "province": "Jawa Tengah",
-            "city": "Purbalingga",
-            "subdistrict": "Karangjambu",
-            "urban": "Danasari",
-            "postalcode": "53357"
-        },
-        {
-            "province": "Jawa Tengah",
-            "city": "Tegal",
-            "subdistrict": "Bojong",
-            "urban": "Danasari",
-            "postalcode": "52465"
-        },
-        {
-            "province": "Jawa Tengah",
-            "city": "Pemalang",
-            "subdistrict": "Pemalang",
-            "urban": "Danasari",
-            "postalcode": "52314"
-        },
-        {
-            "province": "Jawa Barat",
-            "city": "Ciamis",
-            "subdistrict": "Cisaga",
-            "urban": "Danasari",
-            "postalcode": "46386"
-        }
-    ]
+  "success": true,
+  "message": "Data search successfully parsed.",
+  "data": [
+    {
+      "province": "Jawa Tengah",
+      "city": "Purbalingga",
+      "subdistrict": "Karangjambu",
+      "urban": "Danasari",
+      "postalcode": "53357"
+    },
+    {
+      "province": "Jawa Tengah",
+      "city": "Tegal",
+      "subdistrict": "Bojong",
+      "urban": "Danasari",
+      "postalcode": "52465"
+    },
+    {
+      "province": "Jawa Tengah",
+      "city": "Pemalang",
+      "subdistrict": "Pemalang",
+      "urban": "Danasari",
+      "postalcode": "52314"
+    },
+    {
+      "province": "Jawa Barat",
+      "city": "Ciamis",
+      "subdistrict": "Cisaga",
+      "urban": "Danasari",
+      "postalcode": "46386"
+    }
+  ]
 }
 ```
 

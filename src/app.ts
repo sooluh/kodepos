@@ -1,6 +1,7 @@
 import Fastify, { FastifyInstance } from 'fastify'
 import fastifyCors from 'fastify-cors'
 import fastifyCompress from 'fastify-compress'
+// @ts-ignore
 import fastifyPrettier from 'fastify-prettier'
 import { parse } from 'qs'
 

@@ -2,12 +2,12 @@
   "name": "kodepos",
   "version": "2.1.1",
   "description": "Indonesian postal code search API by place name, village or city.",
-  "main": "build/app.js",
+  "main": "src/app.js",
   "scripts": {
-    "prebuild": "rimraf ./build",
+    "prebuild": "del-cli \"./src/*.js\"",
     "build": "tsc",
-    "postbuild": "node ./script/minify.js",
-    "start": "node ./build/app.js",
+    "start": "node ./src/app.js",
+    "ts-node": "ts-node ./src/app.ts",
     "dev": "nodemon"
   },
   "keywords": [
@@ -48,9 +48,10 @@
     "@types/cheerio": "^0.22.30",
     "@types/node": "^16.3.1",
     "@types/qs": "^6.9.7",
-    "minify-all-js": "github:sProDev/node-minify-all-js",
+    "del-cli": "^4.0.1",
+    "minify-all-js": "github:sProDev/minify-all-js",
     "nodemon": "^2.0.12",
-    "rimraf": "^3.0.2",
+    "ts-node": "^10.4.0",
     "typescript": "^4.5.4"
   }
 }

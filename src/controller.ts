@@ -1,5 +1,5 @@
 import { FastifyReply, FastifyRequest } from 'fastify'
-import { DataResponse } from './interfaces/api'
+import { DataResponse } from './types'
 import Kodepos from './kodepos'
 
 class Controller {

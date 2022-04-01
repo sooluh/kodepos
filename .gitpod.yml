@@ -1,6 +1,6 @@
 tasks:
-  - init: npm install
-    command: npm run dev
+  - init: yarn install
+    command: yarn dev
 
 ports:
   - port: 3000
