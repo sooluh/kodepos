@@ -1,14 +1,14 @@
 import Fastify, { FastifyInstance } from 'fastify'
-import fastifyCors from 'fastify-cors'
 import fastifyCompress from 'fastify-compress'
 // @ts-ignore
 import fastifyPrettier from 'fastify-prettier'
+import fastifyCors from 'fastify-cors'
 import { parse } from 'qs'
 
 import Routes from './routes'
 
 class App extends Routes {
-	private readonly port: number = 3000
+	private readonly port: number = 5000
 	private readonly server: FastifyInstance
 
 	constructor() {
@@ -43,7 +43,7 @@ class App extends Routes {
 
 			this.routes(this.server)
 
-			let address = await this.server.listen(this.port)
+			let address = await this.server.listen(this.port, '0.0.0.0')
 			console.info('Listen to requests on', address)
 		} catch (error) {
 			this.server.log.error(error)

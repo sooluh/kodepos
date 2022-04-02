@@ -1,14 +1,15 @@
 {
-  "name": "kodepos",
-  "version": "2.1.1",
-  "description": "Indonesian postal code search API by place name, village or city.",
+  "name": "@sooluh/kodepos",
+  "version": "2.2.0",
+  "description": "Indonesian postal code search API by place name, village or city",
   "main": "src/app.js",
   "scripts": {
     "prebuild": "del-cli \"./src/*.js\"",
     "build": "tsc",
     "start": "node ./src/app.js",
     "ts-node": "ts-node ./src/app.ts",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "postinstall": "yarn build"
   },
   "keywords": [
     "carikodepos",
@@ -33,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/sooluh/kodepos/issues"
   },
-  "homepage": "https://kodepos.now.sh",
+  "homepage": "https://kodepos.vercel.app",
   "dependencies": {
     "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.10",

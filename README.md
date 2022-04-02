@@ -1,63 +1,48 @@
 ![kodepos](https://socialify.git.ci/sooluh/kodepos/image?description=1&descriptionEditable=Indonesian%20postal%20code%20search%20API%20by%20place%20name%2C%20village%20or%20city.&font=Raleway&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2Ftwitter%2Ftwemoji%2Fmaster%2Fassets%2Fsvg%2F1f4ee.svg&name=1&owner=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Dark)
 
-## Development
+## Getting Started
 
 1. Clone this repository
-
-   ```
+   ```bash
    git clone https://github.com/sooluh/kodepos.git
    ```
-
-2. Change current directory to this repository folder
-
-   ```
+2. Change the current working directory to this repository folder
+   ```bash
    cd kodepos
    ```
-
 3. Install dependencies
-
-   ```
+   ```bash
    yarn install
    ```
-
-4. Run the server
-
+4. Run the server (locally)
    - Development mode
-
-     ```
+     ```bash
      yarn dev
      ```
-
    - Production mode
-
      1. Build first
-
-        ```
+        ```bash
         yarn build
         ```
-
      2. Run
-
-        ```
+        ```bash
         yarn start
         ```
 
-## Usage
+## Basic Usage
 
-Base URL : `http://localhost:3000/`
-
-### Endpoint
+Base URL : `http://localhost:5000`
 
 | Endpoint  | Description                     | Parameter | Method |
 | --------- | ------------------------------- | --------- | ------ |
 | `/search` | To find postcode using keywords | `q`       | GET    |
 
-### Example
+### Example of Use
 
 #### Request
 
-```curl
-curl -XGET 'http://localhost:3000/search/?q=danasari'
+```bash
+curl -XGET 'http://localhost:5000/search/?q=danasari'
 ```
 
 #### Response
@@ -99,9 +84,10 @@ curl -XGET 'http://localhost:3000/search/?q=danasari'
 }
 ```
 
-### Ready to use
+### Ready to use!
 
-- https://kodepos.now.sh/
+- https://kodepos.vercel.app/
+- https://kodepos.herokuapp.com/
 
 ## Additional Information
 
