@@ -3,47 +3,67 @@
 ## Getting Started
 
 1. Clone this repository
+
    ```bash
    git clone https://github.com/sooluh/kodepos.git
    ```
-2. Change the current working directory to this repository folder
+
+2. Change the current directory to this repository folder
+
    ```bash
    cd kodepos
    ```
+
 3. Install dependencies
+
    ```bash
    yarn install
    ```
-4. Run the server (locally)
+
+4. Run the app! (locally)
+
    - Development mode
+
      ```bash
      yarn dev
      ```
+
    - Production mode
+
      1. Build first
+
         ```bash
         yarn build
         ```
-     2. Run
+
+     2. Start the app
+
         ```bash
         yarn start
         ```
 
+### One-click Deployment
+
+The fastest way to use it privately on PaaS available
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsooluh%2Fkodepos%2Ftree%2Fmain)
+[![Deploy with Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https%3A%2F%2Fgithub.com%2Fsooluh%2Fkodepos)
+
 ## Basic Usage
 
-Base URL : `http://localhost:5000`
+Base URL : [`http://localhost:5000`](https://kodepos.vercel.app)
 
-| Endpoint  | Description                     | Parameter | Method |
-| --------- | ------------------------------- | --------- | ------ |
-| `/search` | To find postcode using keywords | `q`       | GET    |
+| Endpoint                                       | Description                     | Parameter | Method |
+| ---------------------------------------------- | ------------------------------- | --------- | ------ |
+| [`/search`](https://kodepos.vercel.app/search) | To find postcode using keywords | `q`       | `GET`  |
 
 ### Example of Use
 
 #### Request
 
-```bash
-curl -XGET 'http://localhost:5000/search/?q=danasari'
-```
+<pre>
+curl -XGET '<a href="https://kodepos.vercel.app/search/?q=danasari">http://localhost:5000/search/?q=danasari</a>'
+</pre>
 
 #### Response
 
@@ -84,12 +104,19 @@ curl -XGET 'http://localhost:5000/search/?q=danasari'
 }
 ```
 
+### Showcase
+
+List of awesome projects powered by this API
+
+- [**kodepos-web**](https://kodepos-web.vercel.app) - Simple web application for postcode search by [dotslashf](https://github.com/dotslashf)<br>
+  [Source Code](https://github.com/dotslashf/kodepos-web)
+
 ### Ready to use!
+
+List of server APIs ready to use publicly
 
 - https://kodepos.vercel.app/
 - https://kodepos.herokuapp.com/
-
-## Additional Information
 
 ### License
 
