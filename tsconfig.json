@@ -9,7 +9,7 @@
     "forceConsistentCasingInFileNames": true,
     "removeComments": true,
     "skipLibCheck": true,
-    "noImplicitAny": true
+    "noImplicitAny": false
   },
   "include": [
     "src/**/*"

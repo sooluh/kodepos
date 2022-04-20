@@ -1,6 +1,5 @@
 import Fastify, { FastifyInstance } from 'fastify'
 import fastifyCompress from 'fastify-compress'
-// @ts-ignore
 import fastifyPrettier from 'fastify-prettier'
 import fastifyCors from 'fastify-cors'
 import { parse } from 'qs'
@@ -46,7 +45,7 @@ class App extends Routes {
 			let address = await this.server.listen(this.port, '0.0.0.0')
 			console.info('Listen to requests on', address)
 		} catch (error) {
-			this.server.log.error(error)
+			console.error(error)
 			process.exit(1)
 		}
 	}
