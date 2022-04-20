@@ -1,4 +1,4 @@
-import { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify'
+import { FastifyError, FastifyInstance, FastifyReply, FastifyRequest } from 'fastify'
 import { DataResponse } from './types'
 import Controller from './controller'
 
@@ -22,11 +22,11 @@ class Routes extends Controller {
 		reply.status(response.code).send(response)
 	}
 
-	protected async error(error: any, _request: FastifyRequest, reply: FastifyReply): Promise<void> {
+	protected async error(error: FastifyError, _request: FastifyRequest, reply: FastifyReply): Promise<void> {
 		console.error(error)
 
 		let response: DataResponse = {
-			code: error.statusCode,
+			code: error.statusCode as number,
 			status: false,
 			messages: 'An error occurred either from the client or server.',
 			error

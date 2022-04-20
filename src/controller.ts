@@ -4,7 +4,8 @@ import Kodepos from './kodepos'
 
 class Controller {
 	public async home(request: FastifyRequest, reply: FastifyReply): Promise<void> {
-		let { q } = request.query as any
+		// @ts-ignore
+		let { q } = request.query
 
 		if (typeof q !== 'undefined' && q.trim() !== '') {
 			let redirect = `${request.protocol}://${request.hostname}/search/?q=${q}`
@@ -14,23 +15,24 @@ class Controller {
 		return reply.redirect(302, 'https://github.com/sooluh/kodepos')
 	}
 
-	public async search(request: FastifyRequest, reply: FastifyReply): Promise<any> {
-		let { q } = request.query as any
+	public async search(request: FastifyRequest, reply: FastifyReply): Promise<void> {
+		// @ts-ignore
+		let { q } = request.query
 
-		if (typeof q === 'undefined' || q.trim() === '') {
-			let response: DataResponse = {
-				code: 400,
-				status: false,
-				messages: 'Cannot perform search without parameter "q"!'
-			}
-
-			reply.status(response.code).send(response)
-		} else {
+		if (typeof q !== 'undefined' && q.trim() !== '') {
 			let postal = new Kodepos(q)
 			let response = await postal.search()
 
-			reply.status(response.code).send(response)
+			return reply.status(response.code).send(response)
 		}
+
+		let response: DataResponse = {
+			code: 400,
+			status: false,
+			messages: 'Cannot perform search without parameter "q"!'
+		}
+
+		return reply.status(response.code).send(response)
 	}
 }
 

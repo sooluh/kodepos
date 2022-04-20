@@ -1,4 +1,3 @@
-// @ts-ignore
 import HeaderGenerator from 'header-generator'
 import cheerio from 'cheerio'
 import axios from 'axios'
@@ -20,7 +19,7 @@ class Kodepos {
 		})
 	}
 
-	public async search(): Promise<any> {
+	public async search(): Promise<DataResponse> {
 		const url = this.baseurl + '?s=' + this.keywords
 
 		try {
@@ -42,7 +41,7 @@ class Kodepos {
 					let result: DataResult = {}
 
 					td.each((index: number, html: cheerio.Element): void => {
-						let value: string | any = $(html).find('a').text()
+						let value: string = $(html).find('a').text()
 						let key: string = index === 0 ? 'province' :
 							(index === 1 ? 'city' :
 								(index === 2 ? 'subdistrict' :
