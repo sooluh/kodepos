@@ -3,5 +3,5 @@ tasks:
     command: yarn dev
 
 ports:
-  - port: 3000
+  - port: 5000
     onOpen: ignore

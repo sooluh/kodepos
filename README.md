@@ -108,15 +108,17 @@ curl -XGET '<a href="https://kodepos.vercel.app/search/?q=danasari">http://local
 
 List of awesome projects powered by this API
 
-- [**kodepos-web**](https://kodepos-web.vercel.app) - Simple web application for postcode search by [dotslashf](https://github.com/dotslashf)<br>
-  [Source Code](https://github.com/dotslashf/kodepos-web)
+- [**kodepos-web**](https://github.com/dotslashf/kodepos-web)<br>
+  Simple web-app for postcode search by [dotslashf](https://github.com/dotslashf)
+- [**Kode POS**](https://github.com/AzharRivaldi/Kode-POS-Indonesia)<br>
+  Indonesia postal code search application (kotlin) by [AzharRivaldi](https://github.com/AzharRivaldi)
 
 ### Ready to use!
 
 List of server APIs ready to use publicly
 
-- https://kodepos.vercel.app/
-- https://kodepos.herokuapp.com/
+- [https://kodepos.vercel.app/](https://kodepos.vercel.app/?json=true)
+- [https://kodepos.herokuapp.com/](https://kodepos.herokuapp.com/?json=true)
 
 ### License
 
