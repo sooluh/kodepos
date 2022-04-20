@@ -4,15 +4,35 @@ import Kodepos from './kodepos'
 
 class Controller {
 	public async home(request: FastifyRequest, reply: FastifyReply): Promise<void> {
+		const { repository } = require(__dirname + '/../app.json')
+		const baseurl = `${request.protocol}://${request.hostname}`
+
 		// @ts-ignore
-		let { q } = request.query
+		let { q, json } = request.query
+
+		if (typeof json !== 'undefined' && json.trim() != false) {
+			const { author } = require(__dirname + '/../package.json')
+
+			let response: DataResponse = {
+				code: 200,
+				status: true,
+				messages: 'Welcome to kodepos! Read the API documentation on the listed github repository',
+				data: {
+					repository: `${repository}#basic-usage`,
+					example: `${baseurl}/search/?q=danasari`,
+					author
+				}
+			}
+
+			return reply.status(response.code).send(response)
+		}
 
 		if (typeof q !== 'undefined' && q.trim() !== '') {
-			let redirect = `${request.protocol}://${request.hostname}/search/?q=${q}`
+			let redirect = `${baseurl}/search/?q=${q}`
 			return reply.redirect(301, redirect)
 		}
 
-		return reply.redirect(302, 'https://github.com/sooluh/kodepos')
+		return reply.redirect(302, repository)
 	}
 
 	public async search(request: FastifyRequest, reply: FastifyReply): Promise<void> {
