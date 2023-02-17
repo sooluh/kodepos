@@ -47,6 +47,7 @@
 The fastest way to use it privately on PaaS available
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsooluh%2Fkodepos%2Ftree%2Fmain)
+[![Deploy with Cyclic](https://ik.imagekit.io/sooluh/cyclic.svg)](https://app.cyclic.sh/#/join/sooluh)
 [![Deploy with Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https%3A%2F%2Fgithub.com%2Fsooluh%2Fkodepos)
 
 ## Basic Usage
@@ -117,8 +118,8 @@ List of awesome projects powered by this API
 
 List of server APIs ready to use publicly
 
-- [https://kodepos.vercel.app/](https://kodepos.vercel.app/?json=true)
-- [https://kodepos.herokuapp.com/](https://kodepos.herokuapp.com/?json=true)
+- [https://kodepos.vercel.app](https://kodepos.vercel.app/?json=true)
+- [https://kodepos.cyclic.app](https://kodepos.cyclic.app/?json=true)
 
 ### License
 
