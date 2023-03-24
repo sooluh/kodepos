@@ -4,7 +4,7 @@ import Kodepos from './kodepos'
 
 class Controller {
 	public async home(request: FastifyRequest, reply: FastifyReply): Promise<void> {
-		const { repository } = require(__dirname + '/../app.json')
+		const { homepage } = require(__dirname + '/../package.json')
 		const baseurl = `${request.protocol}://${request.hostname}`
 
 		// @ts-ignore
@@ -18,7 +18,7 @@ class Controller {
 				status: true,
 				messages: 'Welcome to kodepos! Read the API documentation on the listed github repository',
 				data: {
-					repository: `${repository}#basic-usage`,
+					repository: `${homepage}#basic-usage`,
 					example: `${baseurl}/search/?q=danasari`,
 					author
 				}
@@ -32,7 +32,7 @@ class Controller {
 			return reply.redirect(301, redirect)
 		}
 
-		return reply.redirect(302, repository)
+		return reply.redirect(302, homepage)
 	}
 
 	public async search(request: FastifyRequest, reply: FastifyReply): Promise<void> {

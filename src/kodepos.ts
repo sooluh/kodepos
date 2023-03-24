@@ -4,7 +4,7 @@ import axios from 'axios'
 import { DataResponse, DataResult, DataResults } from './types'
 
 class Kodepos {
-	private readonly baseurl: string = 'https://carikodepos.com/'
+	private readonly baseurl: string = 'https://direktorikodepos.org/'
 	private readonly keywords: string
 	private readonly headers: object
 
@@ -20,7 +20,9 @@ class Kodepos {
 	}
 
 	public async search(): Promise<DataResponse> {
-		const url = this.baseurl + '?s=' + this.keywords
+		const url = process.env.PROXY
+			? `${process.env.PROXY}/?${encodeURIComponent(this.baseurl + '?s=' + this.keywords)}`
+			: this.baseurl + '?s=' + this.keywords
 
 		try {
 			let output = await axios({
