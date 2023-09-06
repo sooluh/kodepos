@@ -1,15 +1,15 @@
 {
   "name": "@sooluh/kodepos",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "Indonesian postal code search API by place name, village or city",
-  "main": "src/app.js",
+  "main": "dist/app.js",
   "scripts": {
-    "prebuild": "del-cli \"./src/*.js\"",
-    "build": "tsc",
-    "start": "node ./src/app.js",
-    "ts-node": "ts-node ./src/app.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node ./dist/app.js",
     "dev": "nodemon",
-    "postinstall": "yarn build"
+    "postinstall": "yarn build",
+    "format": "prettier --write .",
+    "commit": "git-cz"
   },
   "keywords": [
     "carikodepos",
@@ -21,13 +21,34 @@
     "code",
     "kode-pos"
   ],
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true,
+    "useTabs": false,
+    "quoteProps": "consistent",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "printWidth": 100
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn format && git add --all",
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sooluh/kodepos.git"
   },
   "author": {
-    "name": "Suluh Sulistiawan",
-    "email": "suluh.webdevelopers@hotmail.com",
+    "name": "Abu Masyail",
+    "email": "suluhs@aol.com",
     "url": "https://suluh.my.id"
   },
   "license": "Apache-2.0",
@@ -36,23 +57,25 @@
   },
   "homepage": "https://github.com/sooluh/kodepos",
   "dependencies": {
-    "axios": "^0.21.1",
-    "cheerio": "^1.0.0-rc.10",
-    "fastify": "^3.19.0",
-    "fastify-compress": "^3.6.0",
-    "fastify-cors": "^6.0.2",
-    "fastify-prettier": "^1.1.9",
-    "header-generator": "^1.0.0",
-    "qs": "^6.10.1"
+    "@fastify/compress": "^6.4.0",
+    "@fastify/cors": "^8.3.0",
+    "@fastify/etag": "^4.2.0",
+    "@fastify/rate-limit": "^8.0.3",
+    "axios": "^1.5.0",
+    "cheerio": "^1.0.0-rc.12",
+    "fastify": "^4.22.2",
+    "header-generator": "^2.1.39",
+    "round-robin-js": "^3.0.5"
   },
   "devDependencies": {
-    "@types/cheerio": "^0.22.30",
-    "@types/node": "^16.3.1",
-    "@types/qs": "^6.9.7",
-    "del-cli": "^4.0.1",
-    "minify-all-js": "github:sProDev/minify-all-js",
-    "nodemon": "^2.0.12",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.5.4"
+    "@types/cheerio": "^0.22.32",
+    "@types/node": "^20.5.9",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.3",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
   }
 }

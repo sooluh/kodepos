@@ -1,4 +1,9 @@
-![kodepos](https://socialify.git.ci/sooluh/kodepos/image?description=1&descriptionEditable=Indonesian%20postal%20code%20search%20API%20by%20place%20name%2C%20village%20or%20city.&font=Raleway&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2Ftwitter%2Ftwemoji%2Fmaster%2Fassets%2Fsvg%2F1f4ee.svg&name=1&owner=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Dark)
+![@sooluh/kodepos](https://socialify.git.ci/sooluh/kodepos/image?description=1&descriptionEditable=Indonesian%20postal%20code%20search%20API%20by%20place%20name%2C%20village%20or%20city.&font=Raleway&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2Ftwitter%2Ftwemoji%2Fmaster%2Fassets%2Fsvg%2F1f4ee.svg&name=1&owner=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Dark)
+
+## Requirements
+
+- Node.js `>= 16.20.1`
+- Yarn `>= 1.22.0`
 
 ## Getting Started
 
@@ -8,7 +13,7 @@
    git clone https://github.com/sooluh/kodepos.git
    ```
 
-2. Change the current directory to this repository folder
+2. Move to the repository directory
 
    ```bash
    cd kodepos
@@ -20,7 +25,7 @@
    yarn install
    ```
 
-4. Run the app! (locally)
+4. Run locally
 
    - Development mode
 
@@ -46,12 +51,19 @@
 
 The fastest way to use it privately on PaaS available
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsooluh%2Fkodepos%2Ftree%2Fmain)
-[![Deploy with Cyclic](https://ik.imagekit.io/sooluh/cyclic.svg)](https://app.cyclic.sh/#/join/sooluh)
+<a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsooluh%2Fkodepos%2Ftree%2Fmain">
+  <img alt="Deploy with Vercel" src="https://vercel.com/button" height="32" />
+</a>
+<a href="https://app.koyeb.com/deploy?type=git&repository=github.com/sooluh/kodepos&branch=main&name=kodepos">
+  <img alt="Deploy with Koyeb" src="https://www.koyeb.com/static/images/deploy/button.svg" height="32" />
+</a>
+<a href="https://render.com/deploy">
+  <img alt="Deploy with Render" src="https://render.com/images/deploy-to-render-button.svg" height="32" />
+</a>
 
 ## Basic Usage
 
-Base URL : [`http://localhost:5000`](https://kodepos.vercel.app)
+Base URL : [`http://localhost:3000`](https://kodepos.vercel.app)
 
 | Endpoint                                       | Description                     | Parameter | Method |
 | ---------------------------------------------- | ------------------------------- | --------- | ------ |
@@ -62,43 +74,43 @@ Base URL : [`http://localhost:5000`](https://kodepos.vercel.app)
 #### Request
 
 <pre>
-curl -XGET '<a href="https://kodepos.vercel.app/search/?q=danasari">http://localhost:5000/search/?q=danasari</a>'
+curl -XGET '<a href="https://kodepos.vercel.app/?q=danasari">http://localhost:3000/search/?q=danasari</a>'
 </pre>
 
 #### Response
 
 ```json
 {
-  "success": true,
-  "message": "Data search successfully parsed.",
+  "statusCode": 200,
+  "code": "OK",
   "data": [
     {
       "province": "Jawa Tengah",
-      "city": "Purbalingga",
-      "subdistrict": "Karangjambu",
-      "urban": "Danasari",
-      "postalcode": "53357"
+      "regency": "Purbalingga",
+      "district": "Karangjambu",
+      "village": "Danasari",
+      "code": "53357"
     },
     {
       "province": "Jawa Tengah",
-      "city": "Tegal",
-      "subdistrict": "Bojong",
-      "urban": "Danasari",
-      "postalcode": "52465"
+      "regency": "Tegal",
+      "district": "Bojong",
+      "village": "Danasari",
+      "code": "52465"
     },
     {
       "province": "Jawa Tengah",
-      "city": "Pemalang",
-      "subdistrict": "Pemalang",
-      "urban": "Danasari",
-      "postalcode": "52314"
+      "regency": "Pemalang",
+      "district": "Pemalang",
+      "village": "Danasari",
+      "code": "52314"
     },
     {
       "province": "Jawa Barat",
-      "city": "Ciamis",
-      "subdistrict": "Cisaga",
-      "urban": "Danasari",
-      "postalcode": "46386"
+      "regency": "Ciamis",
+      "district": "Cisaga",
+      "village": "Danasari",
+      "code": "46386"
     }
   ]
 }
@@ -110,6 +122,7 @@ List of awesome projects powered by this API
 
 - [**kodepos-web**](https://github.com/dotslashf/kodepos-web)<br>
   Simple web-app for postcode search by [dotslashf](https://github.com/dotslashf)
+
 - [**Kode POS**](https://github.com/AzharRivaldi/Kode-POS-Indonesia)<br>
   Indonesia postal code search application (kotlin) by [AzharRivaldi](https://github.com/AzharRivaldi)
 
@@ -117,9 +130,11 @@ List of awesome projects powered by this API
 
 List of server APIs ready to use publicly
 
-- [https://kodepos.vercel.app](https://kodepos.vercel.app/?json=true)
-- [https://kodepos.cyclic.app](https://kodepos.cyclic.app/?json=true)
+- [https://kodepos.vercel.app](https://kodepos.vercel.app/?q=danasari) <sup><sub>`latest`</sub></sup>
+- [https://kodepos.cyclic.app](https://kodepos.cyclic.app/?q=danasari) <sup><sub>`latest`</sub></sup>
+- [https://kodepos.onrender.com](https://kodepos.onrender.com/?q=danasari) <sup><sub>`latest`</sub></sup>
+- [https://kodepos-82o09pkha-sooluh.vercel.app](https://kodepos-82o09pkha-sooluh.vercel.app/?q=danasari) <sup><sub>`v2.2.0`</sub></sup>
 
 ### License
 
-Code licensed under [Apache 2.0 License](https://github.com/sooluh/kodepos/blob/main/LICENSE).
+This project is licensed under [Apache 2.0 License](https://github.com/sooluh/kodepos/blob/main/LICENSE).

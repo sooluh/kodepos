@@ -1,3 +1,7 @@
-node_modules/
-*.js
-.vercel/
+dist
+node_modules
+.vercel
+.yarn
+.vscode
+
+*.log
