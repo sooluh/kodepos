@@ -1,17 +1,11 @@
 {
   "restartable": "rs",
-  "ignore": [
-    ".git",
-    "node_modules/**/node_modules"
-  ],
-  "verbose": "true",
-  "watch": [
-    "src/"
-  ],
+  "ignore": [".git", "node_modules/**/node_modules"],
+  "verbose": true,
+  "watch": ["src"],
   "env": {
     "NODE_ENV": "development"
   },
-  "legacyWatch": true,
   "ext": "ts,json",
-  "exec": "yarn ts-node"
+  "exec": "ts-node ./src/app.ts"
 }

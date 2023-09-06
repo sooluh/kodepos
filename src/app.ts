@@ -1,55 +1,58 @@
-import Fastify, { FastifyInstance } from 'fastify'
-import fastifyCompress from 'fastify-compress'
-import fastifyPrettier from 'fastify-prettier'
-import fastifyCors from 'fastify-cors'
-import { parse } from 'qs'
+import fastify from 'fastify'
+import { sendNotFound } from './utils/spec'
 
-import Routes from './routes'
+const app = async () => {
+  try {
+    console.info('Running app...')
+    const app = fastify({ ignoreTrailingSlash: true, caseSensitive: false })
 
-class App extends Routes {
-	private readonly port: number = 5000
-	private readonly server: FastifyInstance
+    await app.register(import('@fastify/cors'))
+    await app.register(import('@fastify/compress'))
+    await app.register(import('@fastify/etag'))
+    await app.register(import('@fastify/rate-limit'), { max: 2, timeWindow: '1 second' })
+    await app.register(import('./core'))
 
-	constructor() {
-		super()
+    app.setNotFoundHandler((_request, reply) => {
+      return sendNotFound(reply)
+    })
 
-		if (typeof process.env.PORT !== 'undefined') {
-			this.port = parseInt(process.env.PORT)
-		}
+    app.setErrorHandler((error, _request, reply) => {
+      if (error.statusCode === 429) {
+        return reply.status(429).send({
+          statusCode: 429,
+          code: 'TOO_MANY_REQUESTS',
+          message: 'Request limit: 2x per second.',
+        })
+      }
 
-		this.server = Fastify({
-			ignoreTrailingSlash: true,
-			caseSensitive: false,
-			querystringParser: q => parse(q),
-			logger: process.env.NODE_ENV === 'development'
-		})
-	}
+      return reply.status(500).send({
+        statusCode: 500,
+        code: 'INTERNAL_SERVER_ERROR',
+        message: 'Please contact the developer.',
+      })
+    })
 
-	private async middleware(): Promise<void> {
-		await this.server.register(fastifyCors)
-		await this.server.register(fastifyCompress)
-		await this.server.register(fastifyPrettier, {
-			alwaysOn: true
-		})
-	}
+    if (process.env.NODE_ENV === 'production') {
+      for (const signal of ['SIGINT', 'SIGTERM']) {
+        process.on(signal, () => {
+          app.close().then((err) => {
+            console.log(`close application on ${signal}`)
+            process.exit(err ? 1 : 0)
+          })
+        })
+      }
+    }
 
-	public async start(): Promise<void> {
-		try {
-			await this.middleware()
-
-			this.server.setNotFoundHandler(this.override)
-			this.server.setErrorHandler(this.error)
-
-			this.routes(this.server)
-
-			let address = await this.server.listen(this.port, '0.0.0.0')
-			console.info('Listen to requests on', address)
-		} catch (error) {
-			console.error(error)
-			process.exit(1)
-		}
-	}
+    const address = await app.listen({ host: '0.0.0.0', port: Number(process.env.PORT || 3000) })
+    console.info('Listen to requests on', address)
+  } catch (e) {
+    console.error(e)
+  }
 }
 
-const app = new App()
-app.start()
+process.on('unhandledRejection', (e) => {
+  console.error(e)
+  process.exit(1)
+})
+
+app()

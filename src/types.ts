@@ -1,21 +1,23 @@
-export interface DataResult {
-    [key: string]: string
+export type KeywordOptions = {
+  query: string
+  province?: string
+  regency?: string
+  district?: string
 }
 
-export interface DataResults extends Array<object> {
-    [index: number]: {
-        province: string,
-        city: string,
-        subdistrict: string,
-        urban: string,
-        postalcode: number
-    }
+export type ProviderList = {
+  hostname: string
+  segment: string
 }
 
-export interface DataResponse {
-    code: number,
-    status: boolean,
-    messages: string,
-    data?: object,
-    error?: object
+export type DataResult = {
+  province?: string
+  city?: string // deprecated
+  regency?: string
+  subdistrict?: string // deprecated
+  district?: string
+  urban?: string // deprecated
+  village?: string
+  postalcode?: number // deprecated
+  code?: number
 }
