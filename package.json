@@ -4,12 +4,15 @@
   "description": "Indonesian postal code search API by place name, village or city",
   "main": "dist/app.js",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "npx tsc -p tsconfig.json",
     "start": "node ./dist/app.js",
     "dev": "nodemon",
     "postinstall": "yarn build",
     "format": "prettier --write .",
     "commit": "git-cz"
+  },
+  "engines": {
+    "node": ">=16.16.0 <19"
   },
   "keywords": [
     "carikodepos",

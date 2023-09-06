@@ -130,10 +130,10 @@ List of awesome projects powered by this API
 
 List of server APIs ready to use publicly
 
-- [https://kodepos.vercel.app](https://kodepos.vercel.app/?q=danasari) <sup><sub>`latest`</sub></sup>
-- [https://kodepos.cyclic.app](https://kodepos.cyclic.app/?q=danasari) <sup><sub>`latest`</sub></sup>
-- [https://kodepos.onrender.com](https://kodepos.onrender.com/?q=danasari) <sup><sub>`latest`</sub></sup>
-- [https://kodepos-82o09pkha-sooluh.vercel.app](https://kodepos-82o09pkha-sooluh.vercel.app/?q=danasari) <sup><sub>`v2.2.0`</sub></sup>
+- [https://kodepos.vercel.app](https://kodepos.vercel.app/?q=danasari) `latest`
+- [https://kodepos.onrender.com](https://kodepos.onrender.com/?q=danasari) `latest`
+- [https://kodepos.cyclic.app](https://kodepos.cyclic.app/?q=danasari) `latest`
+- [https://kodepos-82o09pkha-sooluh.vercel.app](https://kodepos-82o09pkha-sooluh.vercel.app/?q=danasari) `v2.2.0`
 
 ### License
 
