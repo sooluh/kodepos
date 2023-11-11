@@ -64,7 +64,7 @@
     "@fastify/cors": "^8.3.0",
     "@fastify/etag": "^4.2.0",
     "@fastify/rate-limit": "^8.0.3",
-    "axios": "^1.5.0",
+    "axios": "^1.6.0",
     "cheerio": "^1.0.0-rc.12",
     "fastify": "^4.22.2",
     "header-generator": "^2.1.39",
