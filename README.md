@@ -4,8 +4,8 @@
 
 ## Requirements
 
-- Node.js `>= 16.20.1`
-- Yarn `>= 1.22.0`
+- Node.js `>=16.x`
+- npm
 
 ## Getting Started
 
@@ -24,7 +24,7 @@
 3. Install dependencies
 
    ```bash
-   yarn install
+   npm ci
    ```
 
 4. Run locally
@@ -32,7 +32,7 @@
    - Development mode
 
      ```bash
-     yarn dev
+     npm run dev
      ```
 
    - Production mode
@@ -40,13 +40,13 @@
      1. Build first
 
         ```bash
-        yarn build
+        npm run build
         ```
 
      2. Start the app
 
         ```bash
-        yarn start
+        npm run start
         ```
 
 ### One-click Deployment

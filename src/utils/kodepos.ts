@@ -1,11 +1,12 @@
-import axios from 'axios'
+import https from 'https'
+import fetch from 'node-fetch'
 import { load } from 'cheerio'
+import { HeaderGenerator } from 'header-generator'
 import type { DataResult, KeywordOptions, ProviderList } from '../types'
-import { type HeaderGeneratorOptions, HeaderGenerator, PRESETS } from 'header-generator'
 
 export const search = async (keywords: KeywordOptions, provider: ProviderList) => {
   const proxy = process.env.PROXY_URL
-  const headers = new HeaderGenerator(PRESETS.MODERN_ANDROID as HeaderGeneratorOptions)
+  const headers = new HeaderGenerator()
   const keys = ['province', 'regency', 'district', 'village', 'code']
   const deprecatedKeys = ['province', 'city', 'subdistrict', 'urban', 'postalcode']
 
@@ -27,8 +28,15 @@ export const search = async (keywords: KeywordOptions, provider: ProviderList) =
   url = proxy ? `${proxy}/?${encodeURIComponent(url)}` : url
 
   try {
-    const response = await axios.get(url, { headers: headers.getHeaders() })
-    const $ = load(response.data)
+    const response = await fetch(url, {
+      headers: headers.getHeaders(),
+      agent: new https.Agent({ rejectUnauthorized: false }),
+      redirect: 'follow',
+      follow: 10,
+    })
+    const body = await response.text()
+
+    const $ = load(body)
     const tr = $('tr')
 
     if (!!tr.length) {

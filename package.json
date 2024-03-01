@@ -7,12 +7,12 @@
     "build": "npx tsc -p tsconfig.json",
     "start": "node ./dist/app.js",
     "dev": "nodemon",
-    "postinstall": "yarn build",
+    "postinstall": "npm run build",
     "format": "prettier --write .",
     "commit": "git-cz"
   },
   "engines": {
-    "node": ">=16.16.0 <19"
+    "node": ">=16"
   },
   "keywords": [
     "carikodepos",
@@ -41,7 +41,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn format && git add --all",
+      "pre-commit": "npm run format && git add --all",
       "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
     }
   },
@@ -64,10 +64,10 @@
     "@fastify/cors": "^8.3.0",
     "@fastify/etag": "^4.2.0",
     "@fastify/rate-limit": "^8.0.3",
-    "axios": "^1.6.0",
     "cheerio": "^1.0.0-rc.12",
     "fastify": "^4.22.2",
     "header-generator": "^2.1.39",
+    "node-fetch": "^2.7.0",
     "round-robin-js": "^3.0.5"
   },
   "devDependencies": {
