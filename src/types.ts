@@ -12,12 +12,8 @@ export type ProviderList = {
 
 export type DataResult = {
   province?: string
-  city?: string // deprecated
   regency?: string
-  subdistrict?: string // deprecated
   district?: string
-  urban?: string // deprecated
   village?: string
-  postalcode?: number // deprecated
   code?: number
 }

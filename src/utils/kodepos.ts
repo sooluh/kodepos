@@ -8,12 +8,11 @@ export const search = async (keywords: KeywordOptions, provider: ProviderList) =
   const proxy = process.env.PROXY_URL
   const headers = new HeaderGenerator()
   const keys = ['province', 'regency', 'district', 'village', 'code']
-  const deprecatedKeys = ['province', 'city', 'subdistrict', 'urban', 'postalcode']
 
   let url = `https://${provider.hostname}/`
 
   if (keywords.province) {
-    url += `${provider.segment}/${keywords.province}`
+    url += provider.segment ? `${provider.segment}/${keywords.province}` : `${keywords.province}`
 
     if (keywords.regency) {
       url += `/${keywords.regency}`
@@ -36,6 +35,8 @@ export const search = async (keywords: KeywordOptions, provider: ProviderList) =
     })
     const body = await response.text()
 
+    console.log('scraped from:', provider.hostname)
+
     const $ = load(body)
     const tr = $('tr')
 
@@ -51,12 +52,11 @@ export const search = async (keywords: KeywordOptions, provider: ProviderList) =
         td.each((index, data) => {
           const value = $(data).find('a').text().trim()
 
-          result[deprecatedKeys[index]] = value
           result[keys[index]] = value
         })
 
-        // ['province', 'city', 'regency', 'subdistrict', 'district', 'urban', 'village', 'postalcode', 'code']
-        if (Object.entries(result).length === 9) {
+        // ['province', 'regency', 'district', 'village', 'code']
+        if (Object.entries(result).length === 5) {
           results.push(result)
         }
       })
