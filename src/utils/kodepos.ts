@@ -61,7 +61,7 @@ export const search = async (keywords: KeywordOptions, provider: ProviderList) =
         }
       })
 
-      return results
+      return results.sort((a, b) => parseInt(a.code!) - parseInt(b.code!))
     }
 
     return []

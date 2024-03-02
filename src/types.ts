@@ -15,5 +15,5 @@ export type DataResult = {
   regency?: string
   district?: string
   village?: string
-  code?: number
+  code?: string
 }
