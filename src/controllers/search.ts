@@ -14,6 +14,8 @@ export const search = (app: FastifyInstance) => {
     const result = await scrape({ query: q, province, regency, district }, provider.value)
     const response = createSpecResponse(result)
 
+    reply.header('Cache-Control', 's-maxage=86400, stale-while-revalidate=604800')
+
     return reply.send(response)
   }
 }
