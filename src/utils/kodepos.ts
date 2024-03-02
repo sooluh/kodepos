@@ -1,18 +1,18 @@
-import axios from 'axios'
+import https from 'https'
+import fetch from 'node-fetch'
 import { load } from 'cheerio'
+import { HeaderGenerator } from 'header-generator'
 import type { DataResult, KeywordOptions, ProviderList } from '../types'
-import { type HeaderGeneratorOptions, HeaderGenerator, PRESETS } from 'header-generator'
 
 export const search = async (keywords: KeywordOptions, provider: ProviderList) => {
   const proxy = process.env.PROXY_URL
-  const headers = new HeaderGenerator(PRESETS.MODERN_ANDROID as HeaderGeneratorOptions)
+  const headers = new HeaderGenerator()
   const keys = ['province', 'regency', 'district', 'village', 'code']
-  const deprecatedKeys = ['province', 'city', 'subdistrict', 'urban', 'postalcode']
 
   let url = `https://${provider.hostname}/`
 
   if (keywords.province) {
-    url += `${provider.segment}/${keywords.province}`
+    url += provider.segment ? `${provider.segment}/${keywords.province}` : `${keywords.province}`
 
     if (keywords.regency) {
       url += `/${keywords.regency}`
@@ -27,8 +27,17 @@ export const search = async (keywords: KeywordOptions, provider: ProviderList) =
   url = proxy ? `${proxy}/?${encodeURIComponent(url)}` : url
 
   try {
-    const response = await axios.get(url, { headers: headers.getHeaders() })
-    const $ = load(response.data)
+    const response = await fetch(url, {
+      headers: headers.getHeaders(),
+      agent: new https.Agent({ rejectUnauthorized: false }),
+      redirect: 'follow',
+      follow: 10,
+    })
+    const body = await response.text()
+
+    console.log('scraped from:', provider.hostname)
+
+    const $ = load(body)
     const tr = $('tr')
 
     if (!!tr.length) {
@@ -43,17 +52,16 @@ export const search = async (keywords: KeywordOptions, provider: ProviderList) =
         td.each((index, data) => {
           const value = $(data).find('a').text().trim()
 
-          result[deprecatedKeys[index]] = value
           result[keys[index]] = value
         })
 
-        // ['province', 'city', 'regency', 'subdistrict', 'district', 'urban', 'village', 'postalcode', 'code']
-        if (Object.entries(result).length === 9) {
+        // ['province', 'regency', 'district', 'village', 'code']
+        if (Object.entries(result).length === 5) {
           results.push(result)
         }
       })
 
-      return results
+      return results.sort((a, b) => parseInt(a.code!) - parseInt(b.code!))
     }
 
     return []
