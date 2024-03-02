@@ -67,9 +67,12 @@ The fastest way to use it privately on PaaS available
 
 Base URL : [`http://localhost:3000`](https://kodepos.vercel.app)
 
-| Endpoint                                       | Description                     | Parameter | Method |
-| ---------------------------------------------- | ------------------------------- | --------- | ------ |
-| [`/search`](https://kodepos.vercel.app/search) | To find postcode using keywords | `q`       | `GET`  |
+| Endpoint                                       | Description                     | Parameter  | Method |
+| ---------------------------------------------- | ------------------------------- | ---------- | ------ |
+| [`/search`](https://kodepos.vercel.app/search) | To find postcode using keywords | `q`        | `GET`  |
+|                                                |                                 | `province` | `GET`  |
+|                                                |                                 | `regency`  | `GET`  |
+|                                                |                                 | `district` | `GET`  |
 
 ### Example of Use
 
