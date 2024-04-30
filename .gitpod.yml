@@ -1,7 +1,0 @@
-tasks:
-  - init: yarn install
-    command: yarn dev
-
-ports:
-  - port: 3000
-    onOpen: ignore

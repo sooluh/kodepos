@@ -5,6 +5,7 @@
   "main": "dist/app.js",
   "scripts": {
     "build": "npx tsc -p tsconfig.json",
+    "postbuild": "copyfiles data/* dist/",
     "start": "node ./dist/app.js",
     "dev": "nodemon",
     "postinstall": "npm run build",
@@ -12,7 +13,7 @@
     "commit": "git-cz"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=20"
   },
   "keywords": [
     "carikodepos",
@@ -64,16 +65,13 @@
     "@fastify/cors": "^8.3.0",
     "@fastify/etag": "^4.2.0",
     "@fastify/rate-limit": "^8.0.3",
-    "cheerio": "^1.0.0-rc.12",
     "fastify": "^4.22.2",
-    "header-generator": "^2.1.39",
-    "node-fetch": "^2.7.0",
-    "round-robin-js": "^3.0.5"
+    "fuse.js": "^7.0.0"
   },
   "devDependencies": {
-    "@types/cheerio": "^0.22.32",
     "@types/node": "^20.5.9",
     "commitizen": "^4.3.0",
+    "copyfiles": "^2.4.1",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^8.0.3",
     "nodemon": "^3.0.1",
