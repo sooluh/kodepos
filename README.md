@@ -134,8 +134,6 @@ List of server APIs ready to use publicly
 
 - [https://kodepos.vercel.app](https://kodepos.vercel.app/?q=danasari) `latest`
 - [https://kodepos.onrender.com](https://kodepos.onrender.com/?q=danasari) `latest`
-- [https://kodepos.cyclic.app](https://kodepos.cyclic.app/?q=danasari) `v2.2.0`
-- [https://kodepos-82o09pkha-sooluh.vercel.app](https://kodepos-82o09pkha-sooluh.vercel.app/?q=danasari) `v2.2.0`
 
 ### License
 
