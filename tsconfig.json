@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
-    "rootDir": "./src",
-    "module": "commonjs",
     "strict": true,
+    "module": "commonjs",
+    "outDir": "dist",
     "target": "es6",
     "resolveJsonModule": true,
     "esModuleInterop": true,
@@ -14,6 +13,6 @@
     "declaration": true,
     "typeRoots": ["node_modules/@types", "types"]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts"],
+  "include": ["start/*.ts", "start/*.d.ts", "app/**/*.ts", "app/**/*.d.ts", "types/index.ts"],
   "exclude": ["node_modules"]
 }

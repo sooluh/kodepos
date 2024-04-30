@@ -1,8 +1,8 @@
-import type { ProviderList } from '../../src/types'
-import type { SequentialRoundRobin } from 'round-robin-js'
+import type Fuse from 'fuse.js'
+import { DataResult } from '..'
 
 declare module 'fastify' {
   export interface FastifyInstance {
-    providers: SequentialRoundRobin<ProviderList>
+    fuse: Fuse<DataResult>
   }
 }

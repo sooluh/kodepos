@@ -1,7 +1,5 @@
 dist
 node_modules
 .vercel
-.yarn
 .vscode
-
 *.log

@@ -1,10 +1,10 @@
-<a href="https://s.id/standwithpalestine"><img alt="I stand with Palestine" src="https://github.com/Safouene1/support-palestine-banner/blob/master/banner-project.svg" width="100%" /></a>
+<a href="https://s.id/standwithpalestine"><img alt="I stand with Palestine" src="https://cdn.jsdelivr.net/gh/Safouene1/support-palestine-banner@master/banner-project.svg" width="100%" /></a>
 
 ![@sooluh/kodepos](https://socialify.git.ci/sooluh/kodepos/image?description=1&descriptionEditable=Indonesian%20postal%20code%20search%20API%20by%20place%20name%2C%20village%20or%20city.&font=Raleway&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2Ftwitter%2Ftwemoji%2Fmaster%2Fassets%2Fsvg%2F1f4ee.svg&name=1&owner=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Dark)
 
 ## Requirements
 
-- Node.js `>=16.x`
+- Node.js `>= 20.x`
 - npm
 
 ## Getting Started
@@ -67,12 +67,9 @@ The fastest way to use it privately on PaaS available
 
 Base URL : [`http://localhost:3000`](https://kodepos.vercel.app)
 
-| Endpoint                                       | Description                     | Parameter  | Method |
-| ---------------------------------------------- | ------------------------------- | ---------- | ------ |
-| [`/search`](https://kodepos.vercel.app/search) | To find postcode using keywords | `q`        | `GET`  |
-|                                                |                                 | `province` | `GET`  |
-|                                                |                                 | `regency`  | `GET`  |
-|                                                |                                 | `district` | `GET`  |
+| Endpoint                                       | Description                     | Parameter | Method |
+| ---------------------------------------------- | ------------------------------- | --------- | ------ |
+| [`/search`](https://kodepos.vercel.app/search) | To find postcode using keywords | `q`       | `GET`  |
 
 ### Example of Use
 

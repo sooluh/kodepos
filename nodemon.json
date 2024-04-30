@@ -2,10 +2,10 @@
   "restartable": "rs",
   "ignore": [".git", "node_modules/**/node_modules"],
   "verbose": true,
-  "watch": ["src"],
+  "watch": ["app", "start"],
   "env": {
     "NODE_ENV": "development"
   },
   "ext": "ts,json",
-  "exec": "ts-node ./src/app.ts"
+  "exec": "ts-node ./start/app.ts"
 }
