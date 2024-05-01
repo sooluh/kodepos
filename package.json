@@ -1,6 +1,6 @@
 {
   "name": "@sooluh/kodepos",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "Indonesian postal code search API by place name, village or city",
   "main": "dist/bin/app.js",
   "scripts": {
