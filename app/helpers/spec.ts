@@ -21,3 +21,11 @@ export const sendNotFound = (reply: FastifyReply) => {
     message: 'This endpoint cannot be found.',
   })
 }
+
+export const sendBadRequest = (reply: FastifyReply) => {
+  return reply.status(400).send({
+    statusCode: 400,
+    code: 'BAD_REQUEST',
+    message: "The 'q' parameter must be filled.",
+  })
+}

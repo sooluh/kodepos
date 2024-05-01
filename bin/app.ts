@@ -9,7 +9,7 @@ const app = async () => {
     await app.register(import('@fastify/cors'))
     await app.register(import('@fastify/compress'))
     await app.register(import('@fastify/etag'))
-    await app.register(import('./core'))
+    await app.register(import('../start/core'))
 
     if (process.env.ENABLE_RATE_LIMIT) {
       await app.register(import('@fastify/rate-limit'), { max: 2, timeWindow: '1 second' })

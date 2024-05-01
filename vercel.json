@@ -3,12 +3,12 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "start/app.ts"
+      "dest": "bin/app.ts"
     }
   ],
   "builds": [
     {
-      "src": "start/app.ts",
+      "src": "bin/app.ts",
       "use": "@vercel/node"
     }
   ],

@@ -1,18 +1,30 @@
 import { KeywordOptions } from '../../types'
-import { createSpecResponse } from '../helpers/spec'
+import { createSpecResponse, sendBadRequest } from '../helpers/spec'
 import type { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify'
 
 export const search = (app: FastifyInstance) => {
   return async (request: FastifyRequest<{ Querystring: KeywordOptions }>, reply: FastifyReply) => {
     const { q } = request.query
     // TODO: search by province, regency, or district
-    const data = app.fuse.search(q).sort((a, b) => (a.score || 0) - (b.score || 0))
 
-    reply.header('Cache-Control', 's-maxage=86400, stale-while-revalidate=604800')
+    if (!q) {
+      return sendBadRequest(reply)
+    }
 
-    const result = data.map(({ item }) => item)
+    const keywords = q
+      // remove duplicate spaces
+      .replace(/\s+/g, ' ')
+      .split(' ')
+      // add extended search per word
+      // https://www.fusejs.io/examples.html#extended-search
+      .map((i) => `'${i}`)
+      .join(' ')
+
+    const data = app.fuse.search(keywords)
+    const result = data.map(({ item: { fulltext, ...rest } }) => rest)
     const response = createSpecResponse(result)
 
+    reply.header('Cache-Control', 's-maxage=86400, stale-while-revalidate=604800')
     return reply.send(response)
   }
 }
