@@ -87,32 +87,32 @@ curl -XGET '<a href="https://kodepos.vercel.app/?q=danasari">http://localhost:30
   "code": "OK",
   "data": [
     {
-      "province": "Jawa Tengah",
-      "regency": "Purbalingga",
-      "district": "Karangjambu",
+      "code": 46386,
       "village": "Danasari",
-      "code": "53357"
-    },
-    {
-      "province": "Jawa Tengah",
-      "regency": "Tegal",
-      "district": "Bojong",
-      "village": "Danasari",
-      "code": "52465"
-    },
-    {
-      "province": "Jawa Tengah",
-      "regency": "Pemalang",
-      "district": "Pemalang",
-      "village": "Danasari",
-      "code": "52314"
-    },
-    {
-      "province": "Jawa Barat",
-      "regency": "Ciamis",
       "district": "Cisaga",
+      "regency": "Ciamis",
+      "province": "Jawa Barat"
+    },
+    {
+      "code": 53357,
       "village": "Danasari",
-      "code": "46386"
+      "district": "Karangjambu",
+      "regency": "Purbalingga",
+      "province": "Jawa Tengah"
+    },
+    {
+      "code": 52314,
+      "village": "Danasari",
+      "district": "Pemalang",
+      "regency": "Pemalang",
+      "province": "Jawa Tengah"
+    },
+    {
+      "code": 52465,
+      "village": "Danasari",
+      "district": "Bojong",
+      "regency": "Tegal",
+      "province": "Jawa Tengah"
     }
   ]
 }
