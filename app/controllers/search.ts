@@ -20,7 +20,7 @@ export const search = (app: FastifyInstance) => {
       .map((i) => `'${i}`)
       .join(' ')
 
-    const data = app.fuse.search(keywords)
+    const data = app.fuse.search(keywords, { limit: 20 })
     const result = data.map(({ item: { fulltext, ...rest } }) => rest)
     const response = createSpecResponse(result)
 
