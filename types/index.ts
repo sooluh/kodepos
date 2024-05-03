@@ -6,10 +6,14 @@ export type KeywordOptions = {
 }
 
 export type DataResult = {
-  province?: string
-  regency?: string
-  district?: string
-  village?: string
-  code?: number
+  province: string
+  regency: string
+  district: string
+  village: string
+  code: number
+  latitude: number
+  longitude: number
+  elevation: number
+  timezone: string
   fulltext?: string
 }

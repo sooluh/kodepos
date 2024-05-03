@@ -6,13 +6,13 @@ import type { DataResult } from '../types'
 import type { FastifyInstance, FastifyPluginOptions } from 'fastify'
 
 const createFullText = (data: DataResult) => {
-  const keys = Object.keys(data)
+  const keys = ['code', 'village', 'district', 'regency', 'province']
   const combinations: string[] = []
 
-  keys.forEach((key1, index1) => {
-    keys.forEach((key2, index2) => {
-      if (index1 !== index2) {
-        combinations.push(`${data[key1]} ${data[key2]}`)
+  keys.forEach((a, x) => {
+    keys.forEach((b, y) => {
+      if (x !== y) {
+        combinations.push(`${data[a]} ${data[b]}`)
       }
     })
   })
