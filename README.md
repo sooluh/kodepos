@@ -91,28 +91,44 @@ curl -XGET '<a href="https://kodepos.vercel.app/?q=danasari">http://localhost:30
       "village": "Danasari",
       "district": "Cisaga",
       "regency": "Ciamis",
-      "province": "Jawa Barat"
+      "province": "Jawa Barat",
+      "latitude": -7.3271342,
+      "longitude": 108.4577572,
+      "elevation": 110,
+      "timezone": "WIB"
     },
     {
       "code": 53357,
       "village": "Danasari",
       "district": "Karangjambu",
       "regency": "Purbalingga",
-      "province": "Jawa Tengah"
+      "province": "Jawa Tengah",
+      "latitude": -7.1857161,
+      "longitude": 109.4368274,
+      "elevation": 705,
+      "timezone": "WIB"
     },
     {
       "code": 52314,
       "village": "Danasari",
       "district": "Pemalang",
       "regency": "Pemalang",
-      "province": "Jawa Tengah"
+      "province": "Jawa Tengah",
+      "latitude": -6.8649882,
+      "longitude": 109.3956117,
+      "elevation": 6,
+      "timezone": "WIB"
     },
     {
       "code": 52465,
       "village": "Danasari",
       "district": "Bojong",
       "regency": "Tegal",
-      "province": "Jawa Tengah"
+      "province": "Jawa Tengah",
+      "latitude": -7.1153626,
+      "longitude": 109.1850778,
+      "elevation": 737,
+      "timezone": "WIB"
     }
   ]
 }
@@ -131,6 +147,9 @@ List of awesome projects powered by this API
 ### Ready to use!
 
 List of server APIs ready to use publicly
+
+> [!IMPORTANT]
+> For production usage, we recommend deploying it on your own and not using the list below. The list below can be used for development or learning purposes only!
 
 - [https://kodepos.vercel.app](https://kodepos.vercel.app/?q=danasari) `latest`
 - [https://kodepos.onrender.com](https://kodepos.onrender.com/?q=danasari) `latest`
