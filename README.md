@@ -65,11 +65,19 @@ The fastest way to use it privately on PaaS available
 
 ## Basic Usage
 
-Base URL : [`http://localhost:3000`](https://kodepos.vercel.app)
+```
+[ENDPOINT] /search
+```
 
-| Endpoint                                       | Description                     | Parameter | Method |
-| ---------------------------------------------- | ------------------------------- | --------- | ------ |
-| [`/search`](https://kodepos.vercel.app/search) | To find postcode using keywords | `q`       | `GET`  |
+<pre>
+[GET] <a href="https://kodepos.vercel.app/?q=danasari">http://localhost:3000/search/?q=danasari</a>
+</pre>
+
+#### Query strings
+
+| params | description | required |
+| ------ | :---------: | :------: |
+| q      |  keywords   |  `true`  |
 
 ### Example of Use
 
