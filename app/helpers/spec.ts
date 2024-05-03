@@ -22,10 +22,10 @@ export const sendNotFound = (reply: FastifyReply) => {
   })
 }
 
-export const sendBadRequest = (reply: FastifyReply) => {
+export const sendBadRequest = (reply: FastifyReply, message?: string) => {
   return reply.status(400).send({
     statusCode: 400,
     code: 'BAD_REQUEST',
-    message: "The 'q' parameter must be filled.",
+    message: message || "The request body doesn't contain valid data.",
   })
 }

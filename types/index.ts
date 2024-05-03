@@ -1,8 +1,13 @@
-export type KeywordOptions = {
+export type SearchQueries = {
   q: string
   province?: string
   regency?: string
   district?: string
+}
+
+export type DetectQueries = {
+  latitude: number
+  longitude: number
 }
 
 export type DataResult = {
@@ -16,4 +21,5 @@ export type DataResult = {
   elevation: number
   timezone: string
   fulltext?: string
+  distance?: number
 }

@@ -1,14 +1,14 @@
-import { KeywordOptions } from '../../types'
+import { SearchQueries } from '../../types'
 import { createSpecResponse, sendBadRequest } from '../helpers/spec'
 import type { FastifyInstance, FastifyReply, FastifyRequest } from 'fastify'
 
 export const search = (app: FastifyInstance) => {
-  return async (request: FastifyRequest<{ Querystring: KeywordOptions }>, reply: FastifyReply) => {
+  return async (request: FastifyRequest<{ Querystring: SearchQueries }>, reply: FastifyReply) => {
     const { q } = request.query
     // TODO: search by province, regency, or district
 
     if (!q) {
-      return sendBadRequest(reply)
+      return sendBadRequest(reply, "The 'q' parameter is required.")
     }
 
     const keywords = q

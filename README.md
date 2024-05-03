@@ -63,28 +63,47 @@ The fastest way to use it privately on PaaS available
   <img alt="Deploy with Render" src="https://render.com/images/deploy-to-render-button.svg" height="32" />
 </a>
 
-## Basic Usage
+## Endpoints
+
+### Search by Place Name
 
 ```
 [ENDPOINT] /search
 ```
 
 <pre>
-[GET] <a href="https://kodepos.vercel.app/?q=danasari">http://localhost:3000/search/?q=danasari</a>
+[GET] <a href="https://kodepos.vercel.app/search/?q=danasari">http://localhost:3000/search/?q=danasari</a>
 </pre>
 
 #### Query strings
 
-| params | description | required |
-| ------ | :---------: | :------: |
-| q      |  keywords   |  `true`  |
+| Params | Description | Required |
+| ------ | ----------- | :------: |
+| q      | keywords    |   [x]    |
 
-### Example of Use
+### Search by Coordinates
+
+```
+[ENDPOINT] /detect
+```
+
+<pre>
+[GET] <a href="https://kodepos.vercel.app/detect/?latitude=-6.547052&longitude=107.3980201">http://localhost:3000/detect/?latitude=-6.547052&longitude=107.3980201</a>
+</pre>
+
+#### Query strings
+
+| Params    | Description | Required |
+| --------- | ----------- | :------: |
+| latitude  | -           |   [x]    |
+| longitude | -           |   [x]    |
+
+### Basic Usage
 
 #### Request
 
 <pre>
-curl -XGET '<a href="https://kodepos.vercel.app/?q=danasari">http://localhost:3000/search/?q=danasari</a>'
+curl -XGET '<a href="https://kodepos.vercel.app/search/?q=danasari">http://localhost:3000/search/?q=danasari</a>'
 </pre>
 
 #### Response
@@ -159,8 +178,8 @@ List of server APIs ready to use publicly
 > [!IMPORTANT]
 > For production usage, we recommend deploying it on your own and not using the list below. The list below can be used for development or learning purposes only!
 
-- [https://kodepos.vercel.app](https://kodepos.vercel.app/?q=danasari) `latest`
-- [https://kodepos.onrender.com](https://kodepos.onrender.com/?q=danasari) `latest`
+- [https://kodepos.vercel.app](https://kodepos.vercel.app/search/?q=danasari) `latest`
+- [https://kodepos.onrender.com](https://kodepos.onrender.com/search/?q=danasari) `latest`
 
 ### License
 
