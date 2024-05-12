@@ -7,7 +7,7 @@ export const search = (app: FastifyInstance) => {
     const { q } = request.query
     // TODO: search by province, regency, or district
 
-    if (!q) {
+    if (typeof q === 'undefined' || q.trim() === '') {
       return sendBadRequest(reply, "The 'q' parameter is required.")
     }
 

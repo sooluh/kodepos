@@ -7,7 +7,12 @@ export const detect = (app: FastifyInstance) => {
   return async (request: FastifyRequest<{ Querystring: DetectQueries }>, reply: FastifyReply) => {
     const { latitude, longitude } = request.query
 
-    if (!latitude || !longitude) {
+    if (
+      typeof latitude === 'undefined' ||
+      latitude.toString().trim() === '' ||
+      typeof longitude === 'undefined' ||
+      longitude.toString().trim() === ''
+    ) {
       return sendBadRequest(reply, "The 'latitude' and 'longitude' parameters is required.")
     }
 
