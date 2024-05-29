@@ -72,6 +72,12 @@ The fastest way to use it privately on PaaS available
     <img height="32" alt="Open in IDX" src="https://cdn.idx.dev/btn/open_purple_32.svg">
   </picture>
 </a>
+<a href="https://gitpod.io/#https://github.com/sooluh/kodepos">
+  <img alt="Open in Gitpod" src="https://gitpod.io/button/open-in-gitpod.svg" height="32" />
+</a>
+<a href="https://codespaces.new/sooluh/kodepos">
+  <img alt="Open in GitHub Codespaces" src="https://github.com/codespaces/badge.svg" height="32" />
+</a>
 
 ## Endpoints
 
