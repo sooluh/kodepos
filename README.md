@@ -63,6 +63,16 @@ The fastest way to use it privately on PaaS available
   <img alt="Deploy with Render" src="https://render.com/images/deploy-to-render-button.svg" height="32" />
 </a>
 
+### Open in
+
+<a href="https://idx.google.com/import?url=https%3A%2F%2Fgithub.com%2Fsooluh%2Fkodepos">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.idx.dev/btn/open_light_32.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://cdn.idx.dev/btn/open_dark_32.svg">
+    <img height="32" alt="Open in IDX" src="https://cdn.idx.dev/btn/open_purple_32.svg">
+  </picture>
+</a>
+
 ## Endpoints
 
 ### Search by Place Name
