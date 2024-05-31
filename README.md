@@ -93,34 +93,9 @@ The fastest way to use it privately on PaaS available
 
 #### Query strings
 
-| Params | Description | Required |
-| ------ | ----------- | :------: |
-| q      | keywords    |   [x]    |
-
-### Search by Coordinates
-
-```
-[ENDPOINT] /detect
-```
-
-<pre>
-[GET] <a href="https://kodepos.vercel.app/detect/?latitude=-6.547052&longitude=107.3980201">http://localhost:3000/detect/?latitude=-6.547052&longitude=107.3980201</a>
-</pre>
-
-#### Query strings
-
-| Params    | Description | Required |
-| --------- | ----------- | :------: |
-| latitude  | -           |   [x]    |
-| longitude | -           |   [x]    |
-
-### Basic Usage
-
-#### Request
-
-<pre>
-curl -XGET '<a href="https://kodepos.vercel.app/search/?q=danasari">http://localhost:3000/search/?q=danasari</a>'
-</pre>
+| Params | Description     | Required |
+| ------ | --------------- | :------: |
+| q      | Search keywords |    ✅     |
 
 #### Response
 
@@ -174,6 +149,44 @@ curl -XGET '<a href="https://kodepos.vercel.app/search/?q=danasari">http://local
       "timezone": "WIB"
     }
   ]
+}
+```
+
+### Search by Coordinates
+
+```
+[ENDPOINT] /detect
+```
+
+<pre>
+[GET] <a href="https://kodepos.vercel.app/detect/?latitude=-6.547052&longitude=107.3980201">http://localhost:3000/detect/?latitude=-6.547052&longitude=107.3980201</a>
+</pre>
+
+#### Query strings
+
+| Params    | Description        | Required |
+| --------- | ------------------ | :------: |
+| latitude  | Location latitude  |    ✅     |
+| longitude | Location longitude |    ✅     |
+
+#### Response
+
+```json
+{
+  "statusCode": 200,
+  "code": "OK",
+  "data": {
+    "code": 41152,
+    "village": "Kembangkuning",
+    "district": "Jatiluhur",
+    "regency": "Purwakarta",
+    "province": "Jawa Barat",
+    "latitude": -6.5495591,
+    "longitude": 107.4121855,
+    "elevation": 112,
+    "timezone": "WIB",
+    "distance": 1.5894826841413479
+  }
 }
 ```
 
