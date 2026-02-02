@@ -83,7 +83,7 @@
     "@fastify/cors": "^8.3.0",
     "@fastify/etag": "^4.2.0",
     "@fastify/rate-limit": "^8.0.3",
-    "fastify": "^4.22.2",
+    "fastify": "^5.7.3",
     "fuse.js": "^7.0.0"
   },
   "devDependencies": {
